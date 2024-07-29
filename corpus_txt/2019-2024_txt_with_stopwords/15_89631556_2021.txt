@@ -1,0 +1,883 @@
+Urbanization and Economic Complexity
+
+Urbanization and Economic Complexity
+Riccardo Di Clemente1*,2, Emanuele Strano3, and Michael Batty2
+1Department of Computer Sciences, University of Exeter, Exeter, EX4 4QF, UK.
+2The Centre for Advanced Spatial Analysis, University College London, London WC1E 6BT, UK.
+3MindEarth, 2502 Biel/Bienne, Switzerland
+*Corresponding author: r.di-clemente@exeter.ac.uk
+ABSTRACT
+Urbanization plays a crucial role in the economic development of every country. The mutual relationship between the
+urbanization of any country and its economic productive structure is far from being understood. We analyzed the historical
+evolution of product exports for all countries using the World Trade Web (WTW) with respect to patterns of urbanization from
+1995-2010. Using the evolving framework of economic complexity, we reveal that a country’s economic development in terms
+of its production and export of goods, is interwoven with the urbanization process during the early stages of its economic
+development and growth. Meanwhile in urbanized countries, the reciprocal relation between economic growth and urbanization
+fades away with respect to its later stages, becoming negligible for countries highly dependent on the export of resources
+where urbanization is not linked to any structural economic transformation.
+Introduction
+It is an established fact that urbanization in developed countries is accompanied by economic growth and industrialization
+which mutually self-reinforce one another1. This historic pattern generates an expectation of a virtuous circle between economic
+growth and urbanization regardless of local conditions2, 3. From classic urban economic theories4, 5 to the more recent scaling
+approach to cities6, 7, the growth of urban population has routinely been used as a proxy for economic growth. This pattern has
+also been observed in rapidly developing countries such as China and India but it cannot be considered a universal blueprint8
+for deviations from this norm have not yet been fully explained.
+In fact, as pointed out in several studies9–12, the increasing urbanization rate in persistently poor and non-industrialized
+countries poses an important dilemma for urban economic theory. Why, given the same rate of urbanization, does Asia contain
+a number of explosive economies while sub-Saharan Africa has seen very little growth? Moreover, in developed and advanced
+industrialized economies, is there appears to be a competitive advantage in continuing this urbanization process indefinitely?
+There are several theories aimed at explaining urbanization processes. Some argue that rural poverty moves people to
+cities as was clearly the case in 19th century Europe and America13, driving the transformation from an agricultural to an
+industrial-service based economy14, 15. Others argue that in the last decades there has been urban-biased public policy that has
+led to over-urbanization12.
+The most intriguing approach however is rooted in the mutual indirect effects of the World Trade Web (WTW) on global
+urbanization16, 17. The dominant idea is that in open economies, domestic communities (such as cities) can trade easily with
+other communities, boosting their exports in substituting industrialization for urbanization policy18. In simple terms, the
+commodities can flow more freely using urban agglomerates as nodes in the trading networks between countries, generating the
+ever present virtuous circle between economic growth and urbanization.
+Starting from this theory, we analyze the WTW to explore the mutual relationship between the urbanization of the countries
+and their economic production structure using the Economic Complexity (EC) framework. Economic Complexity,19–26 is a
+new and expanding field in the economic analysis, which proposes "Fitness" and "Complexity" metrics to quantify the fitness
+or competitiveness of countries and the complexity of products from a country’s basket of exports. The main focus of EC is
+based on a bipartite representation of the World Trade Web where the nodes represent the set of world-countries and the set of
+exported products defined as different entities. Countries and products are connected to one another by imposing a threshold
+based on their Revealed Comparative Advantage (RCA)27 which defines the criterion for the existence of relations.
+The Fitness and Complexity algorithm is a kind of PageRank method applied to WTW, where Fitness Fc is the quantity for
+country c, and Complexity Qp is the quantity for products p. The idea at the basis of the algorithm is that the countries with the
+highest fitness are those which are able to export the highest number of the most exclusive products i.e. those with the highest
+complexity. On the other hand this complexity is non linearly related to the fitness of its exporters so that products exported by
+low fitness countries have a low level of complexity and high complexity products are exported by high fitness countries only.
+The Fitness metric is valuable in quantifying a country’s productive structure and structural transformations which enable
+ar
+X
+iv
+:2
+00
+9.
+11
+96
+6v
+1 
+ [p
+hy
+sic
+s.s
+oc
+-p
+h]
+  1
+3 S
+ep
+ 20
+20
+one to predict its future economic growth23. It correlates with the extent of economic equality28 and it has been used to analyze
+the country’s growth path to industrialization29.
+In this work, we couple the WTW data with the urbanization level of more than 146 countries worldwide, and analyze this
+between 1995-2010 thus capturing the fingerprint of urbanization on countries’ productive systems through the lens of their
+exports. We notice that in rural economies, the increase in urban population fosters structural changes in industrial exports. It
+boosts the country’s diversification improving the country fitness, and allowing the export of more complex products. These
+economic transformations fade away in countries that already have a high level of urban population (more than 60%) where
+there is no relation between the urbanization process and the country’s fitness.
+Within the sub-Saharan countries, we capture those where the virtuous circle between economic growth and urbanization
+is fostering structural changes in those countries’ productive systems. On the other hand within countries with economies
+based on raw materials, we assess the implementation of policy leading to urbanization that does not support any structural
+transformations of their basket of exports.
+Results
+Economic Complexity and Urbanization
+We represent the WTW as a bipartite network, i.e. by considering the set of world-countries and the set of products as different
+entities and linking a given country to a given product if (and only if) the former exports to the latter above a certain threshold
+(the so-called Revealed Comparative Advantage - RCA)27. RCA is a general criterion adopted in order to understand whether a
+country can be considered, or not, a producer of a particular product. It quantifies how much the export of a given product p is
+relevant for the economy of a country c in relation to the global export of p for all countries (See Methods Section below).
+The country’s fitness and product’s complexity are the result of a non-linear iterative map applied to the WTW matrix
+M19, 20, 30 (See Methods below).
+Through the algorithm’s iterations, products exported by low fitness countries have a low level of complexity while high
+complexity products are exported by high fitness countries only. The countries’ composition of their export basket depends on
+their fitness. Fitness and Complexity are thus non-monetary indicators of the economy’s development: the fitness represents a
+measure of tangible and intangible assets and capabilities, which drive the country’s development, such as political organization,
+its history, geography, technology, services, and infrastructures21. Meanwhile complexity measures the necessary capabilities
+which must be owned by a country in order that it can produce and then export the resulting product.
+Within this framework, we include the dimension of a country’s degree of urbanization defined as the percentage of the
+total population living in urban areas. Our aim is to quantify the link between a country’s urbanization process and their exports
+as a proxy for their industrial economic system. To disentangle the relation between country productivity systems and their
+urbanization, we have divided the set of countries in terms of their degree of urbanization, defined by the Urban Range, which
+is expressed in four quantiles [Q1,Q2,Q3,Q4] (see urban range division in Fig.1B top).
+More urbanized countries [Q3,Q4] in the early 2000s, export a wide range of complex products such as: textiles, heavy
+manufacturing industries, and IT while rural countries [Q1,Q2] export products that require a low level of sophistication such
+as raw materials and agricultural products (Fig.1A).
+Highly urbanized countries maintain a similar distribution across the analysis years, with a long tail of low complexity
+products and a consistent increase in the number of high complexity products. On the other hand starting from 2005, we
+have noticed that rural countries change their export basket towards higher complexity products. This shift is shown by the
+cumulative distribution functions of the different Urban ranges that decrease their distance from one another over time (see
+Fig.1A inset) together with their median and peak distance.
+We notice that countries within the higher quantile of the Urban Range, Fig.1B, are the ones with higher fitness and higher
+diversification, whilst low urbanized countries have a low diversification and fitness. Notable exceptions are countries with
+exports based on raw materials (i.e. Qatar, Kuwait, Gabon, Iraq, Libya). These countries reached higher levels of urbanization
+as result of policy decisions31 meanwhile their exports are limited to a few products with low complexity.
+The representation of the WTW in Fig. 1C shows country exports in 2010 rearranged by ranked fitness and complexity. The
+country exports’ diversification is related to the urbanization level. Low urbanized countries are at the bottom of the matrix
+with low fitness and lower degree of diversification, whilst the urbanized countries, with the most advanced economies lie at the
+top, with a high degree of product diversification with different levels of complexity and high fitness.
+Exports Diversification and Urbanization
+It is known that low fitness countries have similar economies with low degrees of diversification and high similarity with respect
+to their export baskets20, 32, 33 i. e. they produce and export few of the same low technology products. We captured a shift in the
+distribution of the exported products within the rural countries (Fig.1A). In particular, we noticed that rural countries start to
+2/10
+-10 -8 -6 -4 -2 0 2
+Products Log(Complexity)
+0
+0.2
+0.4
+0.6
+0.8
+1
+CD
+F
+-10 -8 -6 -4 -2 0 2
+Products Log(Complexity)
+0
+0.2
+0.4
+0.6
+0.8
+1
+CD
+F
+-10 -8 -6 -4 -2 0 2
+Products Log(Complexity)
+0
+0.2
+0.4
+0.6
+0.8
+CD
+F
+2000
+0
+0.05
+0.10
+0.15
+0.20
+0.25
+Frequency
+2005
+0
+0.05
+0.10
+0.15
+0.20
+0.25
+Frequency
+-10 -8 -6 -4 -2 0 2
+Products Log(Complexity)
+0
+0.05
+0.10
+0.15
+0.20
+0.25
+Frequency
+2010
+A
+0 1 2 3 4 5
+Ranked Log(Fitness)
+1
+2
+3
+4
+5
+6
+7
+Lo
+g(
+Di
+ve
+rs
+ific
+at
+ion
+)
+2010
+Burundi
+Eritrea
+Malawi
+Mozambique
+Rwanda
+Chad
+Niger
+Tajikistan
+Yemen
+Guyana
+Somalia
+Zambia
+Angola
+Cameroon
+Congo
+Sudan
+Benin
+Guinea
+Guinea-Bissau
+Liberia
+Mali
+Mauritania
+Nigeria
+Turkmenistan
+Bhutan
+Azerbaijan
+Belize
+Gabon
+Algeria
+Libya
+Mongolia
+Iraq
+Kuwait
+Qatar
+Iceland
+Malta
+Suriname
+Greenland
+B
+Urban Range Q1
+Urban Range Q2
+Urban Range Q3
+Urban Range Q4
+0.00.0750.1500.225
+Ur
+ba
+n 
+Ra
+ng
+e
+Q1
+Q2
+Q4
+Q3
+Density
+C
+Product
+Co
+un
+try
+Figure 1. A. Distribution of exported products complexity by different urbanization levels through the 2000-2010. There is a
+shift of lower urbanized countries towards the export of more complex products B. caption Distribution of the Urban Range
+(percentage of the total population living in urban areas) of the 146 countries analyzed. B. Ranked country fitness vs products
+export diversification, the highly diversified countries are one’s with more fitness and high urbanization, meanwhile low
+urbanized country are in the center bottom of the scatter plot, with some exceptions such as those with links to the oil countries.
+C. Matrix of the country exports in 2010, reordering the countries and products by fitness and complexity; the color dots
+represent an exported product under the RCA threshold Eq.2, the color gradient follows the urban range definition.
+produce and export more sophisticated products. This productive systems transformation in the EC literature is related to the
+development of new capabilities22, 34, 35.
+Some questions from this analysis emerge: do the rural countries evolve their productive systems in the same way? and do
+they continue to produce and export the same products? Is the pattern of economic development entangled with urbanization in
+same fashion for each rural country?
+We can measure indirectly the transformation of the productive systems by analyzing the evolution of WTW topology. In
+3/10
+particular we can assess the changes of countries’ similarities in their exports studying the abundance evolution of network
+motifs. A network motif is a particular pattern of interconnections occurring between the nodes of the network (i.e. between
+the countries and their products). In our case we are interested in the abundance of the similarity motif µsim in Fig.2B (motifs
+636, or X motif33): it quantifies the co-occurrence of any two countries as producers of the same couple of products as Eq.7
+(and, viceversa, the co-occurrence of any two products in the basket of the same couple of countries). This represents the
+simplest motifs36 that can quantify the similarities in the export countries’ diversification which maintains a pairwise correlation
+within the products exported. Two economies with a fixed number of products exported are diversifying if the values of µsim is
+decreasing while their production similarity increases with high values of µsim.
+19
+95
+19
+96
+19
+97
+19
+98
+19
+99
+20
+00
+20
+01
+20
+02
+20
+03
+20
+04
+20
+05
+20
+06
+20
+07
+20
+08
+20
+09
+20
+10
+year
+0
+10
+20
+30
+40
+Z-
+Sc
+or
+e
+Urban Range Q1
+Urban Range Q2
+Urban Range Q3
+Urban Range Q4
+WTW
+Motif
+Countries
+Products
+A B
+Figure 2. A Z-score of the export similarity motif by country groups with different Urban Ranges and the Z-score of the whole
+WTW in black. B Similarity motif as the co-occurrence of any two countries as producers of the same couple of products33, 36.
+To provide a benchmark and asses the µsim statistical significance of the WTW we use the Bipartite Configuration Model
+(BiCM)32 as a null model. This framework is valuable in the analysis of the abundance of the bipartite motifs36, enabling us to
+detect financial crisis effects on a country’s export basket33 as well as export similarities between countries with same level of
+economic development37.
+We generated 1000 matrices using the BiCM32 (see Methods Section below) and we compare the observed abundances of
+the similarity motif (Eq.7) in the real network with the corresponding expected values in the null ensemble using the Z-score.
+The whole WTW manifests a progressive increase of the abundance of similarity motifs with respect to the null case33
+(Black line Fig.2A). Highly urbanized countries show a similar trend of increasing similarity in their products exports. This
+measure implies that rural economies are very similar with a higher abundance of the similarity motif with respect to the random
+case having a high value Z-score. Interestingly, low urban range countries diversifying between each other manifest an opposite
+trend. The exports diversification trends of the low urbanized countries coupled with the increasing complexity of the product
+exported imply a nontrivial connection between urbanization and production capabilities. This measure outlines how rural
+economies follow different development patterns based on their production systems. The urbanization phenomenon coupled
+with the capabilities already presented in the country enable the production of different sophisticated products depending on
+their environment.
+Urbanization Growth and Country Fitness
+The economic transformation of a rural country has an impact on its overall fitness value, and the competitiveness of its
+productive system. In this respect, the urbanization process is key element in a country’s development and its economic
+growth31, 38. To assess the relation between the country’s fitness and the urbanization process we analyzed the Urban Range
+growth rate in relation to the growth rate of country fitness ranking between 1995 and 2010, as we show in Fig.3. The country
+fitness ranking is the country’s ordered position with respect to the country’s fitness value in a given year. The growth rate of
+the country’s fitness ranking is an easily understood tool to compare the transformations of a country’s productive systems with
+4/10
+respect to its competitors. It has been proven a reliable tool in quantifying the country’s relative degree of competitiveness
+across different years providing a more stable measurement than the raw fitness value39.
+A B
+0 0.5 1 1.5 2
+Urban Population Growth Rate (%)
+Fi
+tn
+es
+s R
+an
+kin
+g 
+Gr
+ow
+th
+ R
+at
+e fit :0.45 Pearson :0.50CI
+-1
+-0.8
+-0.6
+-0.4
+-0.2
+0
+0.2
+0.4
+0.6
+0.8
+1
+Uganda
+Malawi
+Nepal
+Ethiopia
+Niger
+Cambodia
+Chad
+Kenya
+Afghanistan
+BurkinaFaso
+Tajikistan
+Tanzania
+Guyana
+Vietnam
+Bangladesh
+India
+Mozambique
+Madagascar Laos
+Sudan
+Zimbabwe
+Bhutan
+Guinea
+Kyrgyzstan Mali
+Uzbekistan Pakistan
+Somalia
+Togo
+SierraLeone
+Zambia
+CentralAfricanRepublic
+BosniaHerzegovina
+fit :0.15 Pearson :0.37
+CI
+0 0.5 1 1.5 2
+Urban Population Growth Rate(%)
+Angola
+Benin
+Egypt
+Nigeria
+Belize
+Guinea-Bissau
+China
+Slovenia
+IvoryCoast
+Cameroon
+Georgia
+Azerbaijan
+Kazakhstan
+Romania
+Slovakia
+Syria
+Gambia
+Macedonia
+Nicaragua
+Croatia
+Morocco
+Paraguay
+Portugal
+Poland
+fit :-0.30 Pearson :-0.47
+CI
+0 0.5 1 1.5 2
+Urban Population Growth Rate (%)
+Libya
+Mexico
+Spain
+Norway
+SaudiArabia
+Jordan
+Finland
+UnitedArabEmirates
+Greenland
+Gabon
+Lebanon Bahrain
+Chile
+Australia
+Venezuela
+Israel
+Iceland
+Uruguay
+Kuwait
+Qatar
+Singapore
+Urban Range Q1
+0 0.5 1 1.5 2
+Urban Population Growth Rate (%)
+Ireland SouthAfrica
+Congo
+Armenia
+Panama
+Suriname
+Lithuania
+Algeria
+CyprusLatvia
+Estonia
+Ukraine Iraq
+Iran
+Turkey
+Malaysia
+CostaRicaRussia
+Switzerland
+Brunei
+Greece
+Libya
+-1
+-0.8
+-0.6
+-0.4
+-0.2
+0
+0.2
+0.4
+0.6
+0.8
+1
+Fi
+tn
+es
+s R
+an
+kin
+g 
+Gr
+ow
+th
+ R
+at
+e fit :-0.10 Pearson :-0.30
+CI
+Urban Range Q2
+Urban Range Q4Urban Range Q3
+0.2 0.4 0.6 0.8 1
+Urban Range
+-0.4
+-0.3
+-0.2
+-0.1
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+Sl
+op
+e
+fit :-0.96
+R2 :0.8
+Figure 3. A The Fitness Ranking Growth Rate vs. Urbanization Growth Rate. The effect of urbanization growth on the
+transformation of the economic systems (or vice-versa) is more relevant in low urbanize countries. B Slope coefficient of a
+sliding widows across 25% of the countries (corresponding to 36 countries) of its Fitness Ranking Growth Rate vs. Urban
+Population Growth Rate. The error bar corresponds to the fit’s 95% confidence interval. The colors follow the Urban Range
+Scheme.
+For each of the four Urban Range quantiles we find a linear relation between the urbanization rate and the Fitness ranking
+growth rate in Fig.3. Increasing urbanization within lowly urbanized countries is interwoven with increasing Fitness. Meanwhile,
+the effects are minimal in highly urbanized countries (Urban Range Q3,Q4). We validate the urbanization/fitness relation
+analyzing a 25% quantile sliding window on the whole urbanization distribution, which we show in black in Fig.3B.
+We notice that in many rural economies, the urbanization process affects or has been affected by structural changes in its
+economic production. (An example are countries such as Uganda, Nepal, Somalia.) On other hand, there are many countries
+(such as IvoryCoast, Paraguay, Chad) where the urbanization process does not provide improvement in the fitness ranking40.
+The self-reinforced mechanism between urbanization and fitness reaches a plateau within the urbanized countries (Q3,Q4),
+where the urbanization does not affect or has not been affected by changes in fitness ranking. In this respect, the resource
+exports countries manifest a shift toward a negative relation between urbanization and fitness. In fact in countries that are
+heavily dependent on resource exports, urbanization appears to be concentrated in the cities where the economies consist
+primarily of non-tradeable services41.
+Urban Fitness Trends
+The process of urbanization is often entangled with a country’s industrialization11. As countries develop, people move out
+of rural areas and agricultural activities into urban centers, where they engage in manufacturing products42 which are more
+sophisticated with higher complexity. This transformation is outlined by the increasing level of fitness of low urbanized
+countries that are involved in the urbanization process. To leverage this information and capture its trends, we define the country
+Urban Fitness Furbc (t) = Fc(t)∗Uc(t); this is the value of country fitness Fc weighted by the percentage of urban population Uc.
+We cluster the countries Urban Fitness trends using the Louvain algorithm43 which is based on their correlation matrix
+5/10
+1996 1998 2000 2002 2004 2006 2008 2010
+Years
+0
+0.2
+0.4
+0.6
+0.8
+1
+Ur
+ba
+n 
+Fi
+tn
+es
+s t
+re
+nd
+Cluster 1
+1996 1998 2000 2002 2004 2006 2008 2010
+Years
+0
+0.2
+0.4
+0.6
+0.8
+1
+Ur
+ba
+n 
+Fi
+tn
+es
+s t
+re
+nd
+Cluster 2
+1996 1998 2000 2002 2004 2006 2008 2010
+Years
+0
+0.2
+0.4
+0.6
+0.8
+1
+Ur
+ba
+n 
+Fi
+tn
+es
+s t
+re
+nd
+Cluster 3A
+C
+Country
+Co
+un
+try
+0
+0.2
+0.4
+0.6
+0.8
+1
+1
+2
+3
+Corr.
+B
+Figure 4. A. Clusters of normalized Urban Fitness Trends. B Correlation Matrix of the countries urban fitness trends clustered
+with the Louvain algorithm. C Geographical cluster distribution. Map in this figure was created using the software QGIS.
+shown in Fig.4B. Three clusters emerge with high correlations disentangling the non-trivial geographical relations we show in
+Figs.4A-C.
+In Figure 4A countries with a clear urbanization trend (in orange) are ones with a stable increase in fitness ranking.
+Meanwhile the blue cluster contains developed countries, where the urbanization does not provide any new input to the
+economic development and resource dependent countries, where the urbanization is not only lead by deep structural economic
+change. These results are in agreement with the Urban Range study in Fig. 3 that show a poor effect of the urbanization on
+the country fitness, implying that over a given value of urbanization, other factors have a more important role in economic
+development and growth. Finally, the third cluster (in red) are the countries without any clear trend and are thus uncategorized.
+Discussion
+It is well-known that urbanization provides several advantages to the economics of scale and division of labour, boosting
+productivity and competition. It helps in accessing the labor force and inputting materials to the production process as well as
+decreasing the geographical distance between firms, reducing transaction costs, and fostering competition44. These urbanization
+advantages45 together with the appropriate bureaucratic environment31, investment in infrastructures46 and companies market
+structure47, are some of intangible attributes, the capabilities, that a country needs to drive economic growth and innovation34.
+We noticed that the country Fitness, the production and export of goods, is interwoven within the urbanization process during
+the early stages of country’s economic development and growth. We show that the information carried by WTW can provide a
+different perspective on analyzing the complex process of urbanization, enlightening the relation between a country’s exports,
+economic development and its urban growth.
+Methods
+Data
+World Trade Web
+The dataset used in this work is the BACI (Base pour l’Analyse du Commerce International) World Trade Database1. The data
+contains information on the trade of 200 different countries for more than 5000 different products, categorized according to the
+1Gaulier, S. Baci: International trade database at the product-level. URL: http://www.cepii.fr/CEPII/fr/publications/wp/abstract.asp?NoDoc=2726. Date of
+access: 31/06/2019.
+6/10
+6-digit code of the Harmonised System 20072. The products’ sectors follows the UN categorization3 We create a map between
+the two systems converting the HS2007 in to the ISIC revision 2 code at 2-digit 4 We represent the trade relation between the
+145 countries c ∈ [1,C] and the 1131 products p ∈ [1,P] between the years [1995,2010] throught the bipartite matrix M˜ with
+dimension (C×P) where each entry m˜c,p measures the export in US dollars. The framework of the Economic-Complexity19–22
+based on the interaction between countries and products is expressed by the application of the Revealed Comparative Advantage
+(RCA)27 threshold over the entries m˜c,p:
+RCAc,p =
+m˜cp
+∑p
+′
+1,P m˜cp′
+∑c
+′
+1,C m˜c′ p
+∑p
+′
+1,P∑
+c′
+1,C m˜c′ p′
+(1)
+Finally we define the entries of the biadjacency matrix M of the undirected bipartite network analyzed in this work as:{
+mcp = 1 when RCAcp ≥ 1
+mcp = 0 otherwise
+(2)
+This indicates that the connection (country-product link) is established if and only if the relative RCA is relevant (over the
+threshold), otherwise it can be ignored. Each row of M represents the export basket of a given country (or its diversification kc),
+while each column represents the subset of producers of a given product (or its ubiquity kp)48.
+kc =∑
+p
+mcp kp =∑
+c
+mcp (3)
+Urbanization
+The data for the urban population from 1995 to 2010 are available at the World Bank database 5
+Fitness and Complexity
+Fitness and Complexity are a metric for countries and products applied to bipartite binary matrix M of the WTW19–22, 24.
+The basic idea of EC is to define a non-linear map through an iterative process which couples the Fitness of countries to the
+Complexity of products. At every step of the iteration, the Fitness Fc of a given country c is proportional to the sum of the
+exported products, weighted by their complexity parameter Qp. In particular, the Fitness Fc for the generic country c and
+Quality Qp for the generic product p at the n−th step of iteration, are defined as:
+
+F˜(n)c = ∑pmcpQ
+(n−1)
+p
+Q˜(n)p =
+1
+∑cmcp 1
+F(n−1)c
+→
+
+F(n)c =
+F˜(n)c
+〈F˜(n)c 〉
+Q(n)p =
+Q˜(n)p
+〈Q˜(n)p 〉
+, (4)
+where the symbols 〈·〉 indicate the average taken over the proper set. The initial condition are taken as F0c = Q0p = 1 ∀c ∈
+Nc, ∀p ∈ Np, where Nc and Np are the number respectively of countries and products (the convergence of the algorithm
+described by Eqs.(4) depends on the shape of the matrix M, as it has been discussed in39).
+Bipartite Configuration Model (BICM)
+The Bipartite Configuration Model (BICM), as defined by32, 33, is a null model of general applicability that is able to generate
+a grandcanonical ensemble of bipartite, undirected, binary networks in which the two layers Country and Products have
+respectively C and P nodes. The ensemble generate by the BICM constrained the number of connections for each node, on
+2http://www.wcoomd.org/ Date of access: 31/06/2019.
+3http://www.unstats.un.org/unsd/cr/registry/regcst.asp?Cl=8 Date of access: 31/06/2019.
+4http://www.macalester.edu/research/economics/PAGE/HAVEMAN/Trade.Resources/TradeConcordances.html#FromISIC Date of access:31/06/2019.
+5https://data.worldbank.org/ Date of access: 16 July 2019
+7/10
+both layers (in our case dc and up) to match, on average, the observed one. Each network M in such ensemble is assigned a
+probability coefficient:
+P(M|~x,~y) =∏
+c
+xdc(M)c ∏
+p
+yup(M)p ∏
+c,p
+(1+ xcyp)−1, (5)
+xc and ys are the Lagrange multipliers associated to the constrained degrees.
+Constraining the ensemble average values of countries and products degree induces the probability that a link exists between
+country c and industry sector p independently of the other links:
+pcp =
+xcyp
+1+ xcyp
+. (6)
+The numerical values of the unknown parameters~x and~y have to be determined by solving the following system of C+P
+equations, which constrains the ensemble average values of countries diversification and products ubiquities to match the real
+values, 〈dc〉= d∗c , c= 1 . . .C and 〈up〉= u∗p, p= 1 . . .P.
+Where {d∗c}Cc=1 and {u∗p}Sp=1 are the real degree sequence of countries, and industry sectors respectively, and 〈·〉 represents
+the ensemble average of a given quantity, over the ensemble measure defined by Eq.6 - as 〈dc〉 = ∑s pcp and 〈us〉 = ∑c pcp.
+Indicated with an asterisk, “∗" are the parameters that satisfy the systems.
+Similarity Motifs
+In the present work we have sampled the grand canonical ensemble of binary, undirected, bipartite networks induced by the
+BiCM, according to the probability coefficients P(M|~x∗,~y∗) and calculated the average and variance of the motif µsim, define
+as b-motif6 in36.
+The Similarity Motif represents the symmetric and complete connections between two countries c,c′ and two industry
+sectors p, p′. The number of similarity motifs is:
+µsim =
+1
+4
+C
+∑
+c=1
+C
+∑
+c=1
+Zcc′(Zcc′ −1)−
+1
+4
+C
+∑
+c=1
+dc(dc−1) (7)
+withZ is the matrix of dimension (C,C), that represents the projection of M over the countries. Each entryZcc′ counts the
+number of industry sectors in common between the countries c and c′, it is defined as: Zcc′ = ∑Ss=1McsMc′s =MMT
+This motif represents the co-occurrence of two products in two countries’ export basket within the bipatite matrix of the
+country exports. The accuracy of the BiCM prediction in reproducing the value of quantity µsim please follows32.
+References
+1. Martin, P. & Ottaviano, G. I. P. Growth and agglomeration. Int. Econ. Rev. 42, 947–968, DOI: 10.1111/1468-2354.00141
+(2001).
+2. Buckley, R. M., Annez, P. C. & Spence, M. Urbanization and Growth (The World Bank, 2008).
+3. Duranton, G. Growing through cities in developing countries. The World Bank Res. Obs. 30, 39–73, DOI: 10.1093/wbro/
+lku006 (2014).
+4. Jacobs, J. The economy of cities (Vintage, 2016).
+5. Glaeser, E. L., Kallal, H. D., Scheinkman, J. A. & Shleifer, A. Growth in cities. J. Polit. Econ. 100, 1126–1152, DOI:
+10.1086/261856 (1992).
+6. Bettencourt, L., Lobo, J., Helbing, D., Kühnert, C. & West, G. Growth, innovation, scaling, and the pace of life in cities.
+PNAS; Proc. Natl. Acad. Sci. 104, 7301–7306, DOI: 10.1073/pnas.0610172104 (2007).
+7. Youn, H. et al. Scaling and universality in urban economic diversification. J. The Royal Soc. Interface 13, 20150937, DOI:
+10.1098/rsif.2015.0937 (2016).
+8. Ravallion, M., Chen, S. & Sangraula, P. New evidence on the urbanization of global poverty. Popul. Dev. Rev. 33, 667–701,
+DOI: 10.1111/j.1728-4457.2007.00193.x (2007).
+9. Montgomery, M. R. The urban transformation of the developing world. Science 319, 761, DOI: 10.1126/science.1153012
+(2008).
+8/10
+10. Petrakos, G. Urbanization and international trade in developing countries. World Dev. 17, 1269 – 1277, DOI: 10.1016/
+0305-750X(89)90237-4 (1989).
+11. Gollin, D., Jedwab, R. & Vollrath, D. Urbanization with and without industrialization. J. Econ. Growth 21, 35–70, DOI:
+10.1007/s10887-015-9121-4 (2015).
+12. Glaeser, E. L. A world of cities: The causes and consequences of urbanization in poorer countries. J. Eur. Econ. Assoc. 12,
+1154–1199, DOI: 10.1111/jeea.12100 (2014).
+13. Ades, A. F. & Glaeser, E. L. Trade and circuses: Explaining urban giants. The Q. J. Econ. 110, 195–227, DOI:
+10.2307/2118515 (1995).
+14. Davis, J. C. & Henderson, J. Evidence on the political economy of the urbanization process. J. Urban Econ. 53, 98 – 125,
+DOI: 10.1016/S0094-1190(02)00504-1 (2003).
+15. Henderson, V. The urbanization process and economic growth: The so-what question*. J. Econ. Growth 8, 47–71, DOI:
+10.1023/a:1022860800744 (2003).
+16. Fujita, M. & Thisse, J.-F. Does geographical agglomeration foster economic growth? and who gains and loses from it?
+The Jpn. Econ. Rev. 54, 121–145, DOI: 10.1111/1468-5876.00250 (2003).
+17. Krugman, P. R. Geography an Trade (MIT Press, 1993).
+18. Krugman, P. & Elizondo, R. L. Trade policy and the third world metropolis. J. Dev. Econ. 49, 137 – 150, DOI:
+10.1016/0304-3878(95)00055-0 (1996). Increasing Returns, Monopolistic Competition and Economic Development.
+19. Hidalgo, C. A. & Hausmann, R. The building blocks of economic complexity. Proc. Natl. Acad. Sci. 106, 10570–10575,
+DOI: 10.1073/pnas.0900943106 (2009).
+20. Tacchella, A., Cristelli, M., Caldarelli, G., Gabrielli, A. & Pietronero, L. A new metrics for countries’ fitness and products’
+complexity. Sci. reports 2, 723, DOI: 10.1038/srep00723 (2012).
+21. Cristelli, M., Gabrielli, A., Tacchella, A., Caldarelli, G. & Pietronero, L. Measuring the intangibles: A metrics for the
+economic complexity of countries and products. PloS one 8, e70726, DOI: 10.1371/journal.pone.0070726 (2013).
+22. Hidalgo, C. A., Klinger, B., Barabási, A.-L. & Hausmann, R. The product space conditions the development of nations.
+Science 317, 482–487, DOI: 10.1126/science.1144581 (2007).
+23. Tacchella, A., Mazzilli, D. & Pietronero, L. A dynamical systems approach to gross domestic product forecasting. Nat.
+Phys. 14, 861, DOI: 10.1038/s41567-018-0204-y (2018).
+24. Tacchella, A., Cristelli, M., Caldarelli, G., Gabrielli, A. & Pietronero, L. Economic complexity: conceptual grounding of a
+new metrics for global competitiveness. J. Econ. Dyn. Control. 37, 1683–1691, DOI: 10.1016/j.jedc.2013.04.006 (2013).
+25. Albeaik, S., Kaltenberg, M., Alsaleh, M. & Hidalgo, C. A. Improving the economic complexity index. arXiv preprint
+arXiv:1707.05826 (2017).
+26. Servedio, V. D. P., Buttà, P., Mazzilli, D., Tacchella, A. & Pietronero, L. A new and stable estimation method of country
+economic fitness and product complexity. Entropy 20, DOI: 10.3390/e20100783 (2018).
+27. Balassa, B. Trade liberalisation and “revealed” comparative advantage. The Manch. Sch. 33, 99–123, DOI: 10.1111/j.
+1467-9957.1965.tb00050.x (1965).
+28. Hartmann, D., Guevara, M. R., Jara-Figueroa, C., Aristarán, M. & Hidalgo, C. A. Linking economic complexity, institutions,
+and income inequality. World Dev. 93, 75–93, DOI: 10.1016/j.worlddev.2016.12.020 (2017).
+29. Pugliese, E., Chiarotti, G. L., Zaccaria, A. & Pietronero, L. Complex economies have a lateral escape from the poverty
+trap. PloS one 12, e0168540, DOI: 10.1371/journal.pone.0168540 (2017).
+30. Caldarelli, G. et al. A network analysis of countries’ export flows: firm grounds for the building blocks of the economy.
+PloS One 7, e47278, DOI: 10.1371/journal.pone.0047278 (2012).
+31. Henderson, J. V., Shalizi, Z. & Venables, A. J. Geography and development. J. Econ. Geogr. 1, 81–105, DOI: 10.1093/jeg/
+1.1.81 (2001).
+32. Saracco, F., Di Clemente, R., Gabrielli, A. & Squartini, T. Randomizing bipartite networks: the case of the world trade
+web. Sci. reports 5, 10595, DOI: 10.1038/srep10595 (2015).
+33. Saracco, F., Di Clemente, R., Gabrielli, A. & Squartini, T. Detecting early signs of the 2007–2008 crisis in the world trade.
+Sci. reports 6, 30286, DOI: 10.1038/srep30286 (2016).
+9/10
+34. Saracco, F., Di Clemente, R., Gabrielli, A. & Pietronero, L. From innovation to diversification: a simple competitive model.
+PloS one 10, e0140420, DOI: 10.1371/journal.pone.0140420 (2015).
+35. Tacchella, A., Di Clemente, R., Gabrielli, A. & Pietronero, L. The build-up of diversity in complex ecosystems. arXiv
+preprint arXiv:1609.03617 (2016).
+36. Simmons, B. I. et al. bmotif: a package for motif analyses of bipartite networks. Methods Ecol. Evol. DOI: 10.1111/
+2041-210X.13149 (2019).
+37. Saracco, F. et al. Inferring monopartite projections of bipartite networks: an entropy-based approach. New J. Phys. 19,
+053022, DOI: 10.1088/1367-2630/aa6b38 (2017).
+38. Bertinelli, L. & Black, D. Urbanization and growth. J. Urban Econ. 56, 80 – 96, DOI: 10.1016/j.jue.2004.03.003 (2004).
+39. Pugliese, E., Zaccaria, A. & Pietronero, L. On the convergence of the fitness-complexity algorithm. The Eur. Phys. J.
+Special Top. 225, 1893–1911, DOI: 10.1140/epjst/e2015-50118-1 (2016).
+40. Gindelsky, R. J. L. C. M. Demography, Urbanization and Development: Rural Push, Urban Pull and. . . Urban Push?
+(The World Bank, 2015). https://elibrary.worldbank.org/doi/pdf/10.1596/1813-9450-7333.
+41. Gollin, D., Jedwab, R. & Vollrath, D. Urbanization with and without industrialization. J. Econ. Growth 21, 35–70, DOI:
+10.1007/s10887-015-9121-4 (2016).
+42. Michaels, G., Rauch, F. & Redding, S. J. Urbanization and structural transformation *. The Q. J. Econ. 127, 535–586,
+DOI: 10.1093/qje/qjs003 (2012).
+43. Blondel, V. D., Guillaume, J.-L., Lambiotte, R. & Lefebvre, E. Fast unfolding of communities in large networks. J. Stat.
+Mech. Theory Exp. 2008, P10008, DOI: 10.1088/1742-5468/2008/10/p10008 (2008).
+44. Turok, I. & McGranahan, G. Urbanization and economic growth: the arguments and evidence for africa and asia. Environ.
+Urbanization 25, 465–482, DOI: 10.1177/0956247813490908 (2013).
+45. Verona, G. & Ravasi, D. Unbundling dynamic capabilities: an exploratory study of continuous product innovation. Ind.
+Corp. Chang. 12, 577–606, DOI: 10.1093/icc/12.3.577 (2003).
+46. Esfahani, H. S. & Ramir´ez, M. T. Institutions, infrastructure, and economic growth. J. Dev. Econ. 70, 443 – 477, DOI:
+10.1016/S0304-3878(02)00105-0 (2003).
+47. Di Clemente, R., Chiarotti, G. L., Cristelli, M., Tacchella, A. & Pietronero, L. Diversification versus specialization in
+complex ecosystems. PLoS ONE 9, e112525, DOI: 10.1371/journal.pone.0112525 (2014).
+48. Hausmann, R. & Hidalgo, C. Country diversification, product ubiquity, and economic divergence. SSRN Electron. J. DOI:
+10.2139/ssrn.1724722 (2010).
+Acknowledgements
+Riccardo Di Clemente as Newton International Fellow of the Royal Society acknowledges support from the Royal Society, the
+British Academy, and the Academy of Medical Sciences (Newton International Fellowship, NF170505). We authors would like
+to thank Fabio Saracco, Enrico Ubaldi, Bernardo Monechi, Andrea Zaccaria, Andrea Gabrielli, Luciano Pietronero and Marta
+C. González for the insightful discussions and comments.
+Author contributions statement
+R.D.C. and E.S. designed the study and performed the research. R.D.C. analyzed the data a generated the plots, E.S. created the
+Maps. R.D.C., E.S. and M.B. wrote the paper. All the authors gave the final approval for the publication.
+Additional information
+Competing interests The authors declare no competing interest.
+The corresponding author is responsible for submitting a competing interests statement on behalf of all authors of the paper.
+This statement must be included in the submitted article file.
+10/10

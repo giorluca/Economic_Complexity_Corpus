@@ -1,0 +1,949 @@
+Early-career complexity before and after labour-market deregulation in Italy: Heterogeneity by gender and socio-economic status across cohorts
+
+www.ssoar.info
+Early-career complexity before and after labour-
+market deregulation in Italy: Heterogeneity by
+gender and socio-economic status across cohorts
+Struffolino, Emanuela; Raitano, Michele
+Postprint / Postprint
+Zeitschriftenartikel / journal article
+Zur Verfügung gestellt in Kooperation mit / provided in cooperation with:
+Wissenschaftszentrum Berlin für Sozialforschung (WZB)
+Empfohlene Zitierung / Suggested Citation:
+Struffolino, E., & Raitano, M. (2020). Early-career complexity before and after labour-market deregulation in
+Italy: Heterogeneity by gender and socio-economic status across cohorts. Social Indicators Research. https://
+hdl.handle.net/10419/218740
+Nutzungsbedingungen:
+Dieser Text wird unter einer CC BY Lizenz (Namensnennung) zur
+Verfügung gestellt. Nähere Auskünfte zu den CC-Lizenzen finden
+Sie hier:
+https://creativecommons.org/licenses/by/4.0/deed.de
+Terms of use:
+This document is made available under a CC BY Licence
+(Attribution). For more Information see:
+https://creativecommons.org/licenses/by/4.0
+econstor
+Make Your Publications Visible.
+A Service of
+zbw
+Leibniz-Informationszentrum
+Wirtschaft
+Leibniz Information Centre
+for Economics
+Struffolino, Emanuela; Raitano, Michele
+Article  —  Accepted Manuscript (Postprint)
+Early-career complexity before and after labour-
+market deregulation in Italy: Heterogeneity by gender
+and socio-economic status across cohorts
+Social Indicators Research
+Provided in Cooperation with:
+WZB Berlin Social Science Center
+Suggested Citation: Struffolino, Emanuela; Raitano, Michele (2020) : Early-career complexity
+before and after labour-market deregulation in Italy: Heterogeneity by gender and socio-
+economic status across cohorts, Social Indicators Research, ISSN 1573-0921, Springer,
+Dordrecht, Vol. forthcoming
+This Version is available at:
+http://hdl.handle.net/10419/218740
+Standard-Nutzungsbedingungen:
+Die Dokumente auf EconStor dürfen zu eigenen wissenschaftlichen
+Zwecken und zum Privatgebrauch gespeichert und kopiert werden.
+Sie dürfen die Dokumente nicht für öffentliche oder kommerzielle
+Zwecke vervielfältigen, öffentlich ausstellen, öffentlich zugänglich
+machen, vertreiben oder anderweitig nutzen.
+Sofern die Verfasser die Dokumente unter Open-Content-Lizenzen
+(insbesondere CC-Lizenzen) zur Verfügung gestellt haben sollten,
+gelten abweichend von diesen Nutzungsbedingungen die in der dort
+genannten Lizenz gewährten Nutzungsrechte.
+Terms of use:
+Documents in EconStor may be saved and copied for your
+personal and scholarly purposes.
+You are not to copy documents for public or commercial
+purposes, to exhibit the documents publicly, to make them
+publicly available on the internet, or to distribute or otherwise
+use the documents in public.
+If the documents have been made available under an Open
+Content Licence (especially Creative Commons Licences), you
+may exercise further usage rights as specified in the indicated
+licence.
+  https://creativecommons.org/licenses/by/4.0/
+www.econstor.eu
+ 
+ 
+ 
+Early-career complexity before and after labour-market deregulation in Italy: 
+Heterogeneity by gender and socio-economic status across cohorts 
+ 
+Authors: 
+ 
+Emanuela Struffolino (corresponding author) 
+ 
+Freie Univerität Berlin and WZB Berlin Social Science Center  
+Garystr.55  
+14195 Berlin 
+e.struffolino@fu-berlin.de 
+https://orcid.org/0000-0002-6635-8748 
+Tel: +49 30 25491 434 
+ 
+ 
+ 
+Michele Raitano 
+ 
+Department of Economics and Law 
+Sapienza University of Rome 
+Via del Castro Laurenziano 9 - 00161  
+Rome, Italy 
+michele.raitano@uniroma1.it 
+https://orcid.org/0000-0002-3706-1208 
+ 
+ 
+ 
+Acknowledgements 
+We thank Fondazione Giacomo Brodolini for the access to the AD-SILC dataset. For 
+insightful comments and suggestions, we are grateful to the anonymous Reviewers and  the 
+Editor.  
+ 
+     
+1 
+ 
+Abstract  
+Labour-market deregulation may have generated more unstable and complex employment life 
+courses. As exposure to highly volatile early-career trajectories has long-lasting consequences for the  
+working lives of individuals, it is especially important to consider how these processes have affected 
+younger workers in countries like Italy. Here, deregulation ‘at the margins’ of the labour market has 
+been characterized by a strong age divide and has exacerbated the separation between insiders and 
+outsiders. We contrast the individualization of risk perspective with the persistent inequality 
+hypothesis by looking at differentials by gender and socio-economic status in the degree of early-
+career complexity of workers who entered the labour market before and after deregulation. The use 
+of an innovative longitudinal dataset (AD-SILC) which combines administrative records on 
+employment episodes and survey data on individuals’ socio-economic characteristics allows this 
+study to apply advanced methods in sequence analysis to calculate the complexity of seven-year-long 
+early career trajectories. Complexity is measured by considering the number of transitions between 
+employment states and the length of each episode. We find that early-career complexity increased 
+across cohorts, especially for those more exposed to deregulation. Against the scenario of a 
+generalized increase in labour market dualization, this non-linear dynamic especially affected 
+medium and low-educated individuals and was particularly pronounced for women. Although our 
+analytical strategy does not allow for a causal interpretation of mechanisms engendering the observed 
+trends, this empirical evidence is highly relevant for the implication of changes in early career patterns 
+across cohorts for stratification research. 
+ 
+Keywords: labour market, youth, gender, education, flexibility, sequence analysis 
+ 
+ 
+     
+2 
+ 
+Introduction 
+In recent decades, many European countries have sought to increase labour market flexibilization by 
+removing labour market rigidities (e.g. centralized bargaining and hiring and firing costs [OECD, 
+1994]). The ultimate aim was to reduce unemployment and foster smoother transitions into 
+employment for young people and workers with weak labour market attachment, typically women 
+and low-skilled individuals. However, in most cases, the reform process strongly emphasized 
+flexibilization at the margins – i.e. a deregulation of hiring through temporary and atypical 
+arrangements – thus creating two-tier labour markets in which flexible and permanent contracts 
+coexist (Boeri 2011).  
+Although the newly introduced non-standard arrangements were expected to facilitate labour 
+market entry for workers who would subsequently follow linear upward trajectories towards stable 
+standard contracts, some authors have argued that deregulation might have generated more unstable, 
+complex, and ultimately more uncertain employment life courses (e.g. Hofmeister et al., 2006; Mills 
+et al., 2006).  
+The literature in economics and sociology investigates the short-term effects of labour market 
+deregulation by exploring the ‘trap versus stepping stone effect’ of non-standard labour market 
+arrangements (e.g. Barbieri et al. 2016; Booth, Francesconi, and Frank 2002; Gagliarducci 2005; 
+Polavieja 2005). It proceeds primarily by considering the occurrence and timing of transitions 
+between single events, i.e. from temporary to permanent contracts.  The political science literature on 
+labour market dualization emphasizes the process of workforce segmentation between insiders and 
+outsiders, which leads to increasing institutional dualism when policies (e.g. employment protection 
+and unemployment benefits) allocate different rights and entitlements to different categories of 
+recipients (Davidsson & Naczyk, 2009; Emmenegger, Häusermann, Palier, & Seeleib-Kaiser, 2012; 
+ 
+     
+3 
+ 
+Rueda, 2014). Dualization is measured by adopting either a categorical or a continuous indicator of 
+‘outsiderness’ (i.e. risk of being in atypical employment or unemployment; Schwander & 
+Häusermann, 2013) but always refers to ‘point-in-time outcomes’ using cross-sectional analytical 
+designs. Both streams of literature have demonstrated that the ‘trap effect’ of non-standard 
+employment arrangements and insider-outsider cleavages exist and extend to generational 
+inequalities depending on the welfare state. This is especially the case in conservative welfare states 
+and in their Mediterranean variety (Chauvel and Schröder 2014; Palier and Thelen 2010).  
+We extend previous literatures in two respects. First, we describe a trend we observed across 
+cohorts, namely of longitudinal variability for early-career trajectories. We use an indicator that 
+accounts for their temporal dynamics to explore – even if not in a causal fashion – the association 
+between changes in the institutional setting and the entire early-career trajectory conceptualized as a 
+‘process outcome’ (Abbott, 2016). This means that working trajectories are the global result of 
+multiple single events (e.g. the complete succession of different jobs within a career). We utilize 
+sequence analysis to calculate the complexity of early-stage careers by using a synthetic indicator to 
+account for the length of episodes in employment as well as for the mobility between spells in and 
+out of employment. It therefore adequately reflects the life course concept of working-life 
+differentiation: the greater the number of states and episodes experienced over time, the higher the 
+differentiation (Brückner and Mayer 2005). Stability is usually defined in opposition to frequent 
+mobility between different jobs, contracts, and arrangements, whereas mobility often refers to 
+frequent transitions, both from employment to unemployment and vice versa, as well as between 
+different contractual arrangements. When workers move from permanent to temporary contracts, they 
+experience downward transitions. Hence mobility patterns might generate employment trajectories 
+that are not linear or upwardly sloped, i.e. that do not imply a progression toward more desirable 
+ 
+     
+4 
+ 
+positions. Stability and linearity are especially relevant for workers in the early stages of their careers: 
+different levels of exposure to highly volatile trajectories at this point might have long-lasting 
+consequences for (and over) an individual’s working life (Kohli 2007). Ultimately, early-career 
+differentiation in a highly deregulated context may expose outsiders to high precariousness, 
+conceptualized as ‘employment that is uncertain, unpredictable, and risky from the point of view of 
+the worker’ (Kalleberg, 2009:2).  
+Second, we consider if trends across cohorts in early-career complexity differ by worker’s 
+gender and socio-economic status (education and parental background). Against the background of 
+increasing deregulation, the individualization of risk perspective suggests that this increase in 
+employment uncertainty should affect all individuals equally (Beck 1992; Sennett 1999) and lead to 
+a generalization of unpredictable and precarious careers. By contrast, the persistent inequality 
+perspective argues that inequality patterns based on traditional stratification factors should continue 
+to shape individuals’ exposure to labour market risks (Breen 1997; Goldthorpe 2002). Specifically, it 
+assumes that the ongoing process of recommodification of risk linked to labour market deregulation 
+affects workers who are more exposed to market fluctuations and who have fewer background 
+resources to rely on. These workers are typically new entrants into the labour market, especially 
+women and/or those from low socio-economic status groups. 
+We focus on Italy, where the flexibilization reforms of the mid-1990s/mid-2000s only 
+deregulated non-standard arrangements. Although employment rates increased, this was caused by a 
+massive growth in temporary and atypical contracts, for which employment protection was very 
+limited (Boeri 2011). The Italian economic model had traditionally been characterized by high rates 
+of youth unemployment, low rates of female participation, and a sizable proportion of (low-skilled) 
+individuals working in the informal economy. Because the reforms ‘at the margins’ (more or less 
+ 
+     
+5 
+ 
+directly) targeted new entrants, they engendered age and cohort gaps in access to the protected labour 
+market segment. As a result, in contexts characterized by a Mediterranean welfare state, differences 
+between protected/unprotected and older/younger workers overlapped with the traditional distinction 
+between outsiders and insiders (Barbieri & Scherer, 2009; Chauvel & Schröder, 2014; Palier & 
+Thelen, 2010; Rueda, 2014). Against this backdrop, considering the longitudinal variability in the 
+differentiation of early career trajectories of young workers entering the labour market across cohorts 
+by gender and education offers insights into the actual consequences of the insiders/outsiders 
+cleavage in terms of precariousness. In fact, Italy represents an important case study for comparative 
+social policy worth studying in depth per se for at least two reasons. First, the process of reforms 
+towards progressive flexibilization lead to a peculiar two-tier segmentation with several implications 
+for inequality of opportunity and inequality of outcomes (Boeri 2011; Esping-Andersen and Regini 
+2000; Henrichs and Jessoula 2012). Second, the international economic literature has focused 
+prominently on wage profiles in the entry phase (that is, only episodes with non-zero-wages) of 
+careers, showing that Italy is an outlier in international comparisons as wage experience patterns 
+across cohorts have mostly declined in recent decades for high-skilled workers (Beaudry and Green 
+2000; Fitzenberger et al. 2001; Mishel 2012; Naticchioni, Raitano, and Vittori 2016; Rosolia and 
+Torrini 2016). However, a thorough account of cohort dynamics in early-career patterns that 
+incorporate (multiple) transitions in and out of unemployment and between employment states to 
+better characterize the Italian case is still missing in existing scholarship. 
+We use an innovative longitudinal dataset built by combining survey data with administrative 
+information about working histories. We analyse seven-year-long early careers, starting from the first 
+employment episode across six cohorts of young Italian workers who entered the labour market 
+between 1974 and 2001. This means that we compare the complexity of early-career trajectories 
+ 
+     
+6 
+ 
+across cohorts of workers who were exposed to increasing degrees of labour market deregulation. By 
+looking at a single country, we adopt a ‘differential’ life course sociology perspective that studies 
+country cases over time to highlight linkages between institutional configurations and life course 
+outcomes instead of comparing broad categories of welfare state regimes (Mayer 2005).  
+ 
+The Italian institutional background  
+ 
+From the mid-1980s to the early 2000s, the Italian government approved several labour market 
+reforms to ease constraints on temporary hiring and to introduce new contractual arrangements. In 
+Italy, as in other Mediterranean countries, deregulation was promoted as a way of (ideally) boosting 
+the participation of more vulnerable workers, such as women, workers over the age of 50, low-skilled 
+individuals, young people, and immigrants (Vesan 2009).  The reforms fostered a deregulation 
+process that was ‘partial and selective’ (Esping-Andersen and Regini 2000) as it only targeted the 
+‘margins’ of the labour market system, that is, non-standard employment. Unlike other European 
+countries, where access to protected labour market segments was uneven and based on skills 
+differentials (Giesecke and Groß 2003), in Italy the most severe cleavage existed between the older 
+and younger cohorts of workers (Barbieri, 2009). Older workers remained in the core segment, while 
+new entrants found it difficult to move from the periphery (e.g. Barbieri et al., 2016).1  
+                                                        
+1 A reduction in the unfair dismissal protection offered by standard contracts was introduced only 
+much later, in 2012 and 2015, whereas a further deregulation of fixed-term contracts occurred in 
+2014.  
+ 
+     
+7 
+ 
+Table 1 shows the timeline of the reforms and connects it to the cohorts of workers whose early 
+careers were affected. In this article, we focus on individuals who entered the labour market in the 
+period from 1974 to 2001 and follow them over a seven-year-long observational window starting 
+with their first work episode. Therefore, our empirical analyses concern workers whose early careers 
+unfolded before the 2008 economic crisis. 
+ 
+ [Table 1 here] 
+ 
+In the mid-1980s, a number of regulations were introduced to increase part-time employment, 
+raise the maximum age for apprenticeships, and facilitate job training (e.g. internships), as well as to 
+allow for the reintegration of long-term unemployed workers. The first set of reforms affected the 
+early careers of individuals who had entered the labour market during the late 1970s or after. 
+Subsequent reforms to extend apprenticeship and training contracts to a broader range of sectors, 
+which took place in the early 1990s, affected workers who entered in the late 1980s. Following this, 
+a specific public pension fund was introduced in 1995 (the Gestione Separata, implemented in 1996) 
+for para-subordinate workers – also termed dependent self-employed workers. These individuals are 
+self-employed in legal terms, as they work at their own risk and are not formally subordinate to an 
+employer, but they are often ‘economically dependent’ on an employer because in most cases, their 
+activity relies upon one or an extremely small number of clients (Raitano, 2018). In this phase, 
+deregulation reached a crucial turning point: the creation of this fund institutionalized para-
+subordinate collaboration contracts (with no hiring and firing costs, very low social security 
+guarantees, and reduced pension contribution rates that had applied until more recent reforms). In 
+consequence, firms started using these contracts on a large scale instead of standard employment 
+ 
+     
+8 
+ 
+arrangements. Before the reform, only a few workers (mostly freelance researchers) had been hired 
+on para-subordinate contracts. According to INPS (Italian National Social Security Institute) figures, 
+the number of individuals who exclusively performed a para-subordinate activity more than doubled 
+from 1996 to 2003 (from around 840,000 in 1996 to over 1.8 million workers in 2003). The more 
+recent decline in updates of such contracts after 2008 was due to gradual increases in the contribution 
+rates and welfare guarantees, both of which aimed to reduce incentives for employers using para-
+subordinate arrangements. Another factor in the recent decline was the introduction of stricter 
+regulations aimed at detecting ‘false’ para-subordinate work (Raitano, 2018).  
+The Treu package (Law n.186/1997) introduced temporary employment agencies and 
+internship contracts. It also reformed the rules concerning fixed-term employment (dating back to 
+1962), weakening regulations regarding the hiring of temporary employees and reducing sanctions 
+for violations of the obligation to transform temporary contracts into open-ended arrangements. 
+Constraints on the use of fixed-term arrangements were largely removed by Legislative Decree 
+368/2001.  While the previous regulation had outlined specific conditions under which temporary 
+hiring could occur (peaks in production or replacement of workers on sickness or maternity leave), 
+the new Decree contained a more general and non-specific rule permitting hiring on a fixed-term 
+basis for ‘technical, productive, organizational or substitution’ reasons. The flexibilization of the 
+Italian labour market was finally completed by Law 30/2003 (the Biagi law), which introduced further 
+para-subordinate arrangements (e.g. ‘project collaborations’, ‘job on call’, ‘staff leasing’, and ‘job 
+sharing’). It is also notable that, since the mid-1990s, severe limitations on permanent public-sector 
+hiring have been introduced to limit public spending, thus strongly reducing young workers’ chances 
+of attaining an open-ended contract in the public sector (Dell’Aringa et al., 2007).  
+ 
+     
+9 
+ 
+Although these measures changed the opportunity structure for cohorts of workers who were 
+in their early careers in the early 1990s, they are likely to have more directly affected the careers of 
+those who experienced the very first employment spell after the mid-1990s. 
+The implications of these last measures for the early career trajectories of more recent cohorts 
+of young workers are evident in some Eurostat figures for Italy. The increase in non-standard 
+arrangements from the mid-1990s to 2000s is reflected in the share of employees hired on temporary 
+contracts (6.2% in 1998, 7.2% in 2002, and 10.0% in 2008) and on part-time contracts (7.2% in 1998, 
+8.5% in 2002, and 14.1% in 2008). The picture changes dramatically when we consider workers 
+between the ages of 15 and 29: the share of employees on fixed-term contracts rose from 9.7% in 
+1983 to 11.4% in 1993, and to 32.0% in 2008. The share of part-time employees rose from 4.7% in 
+1983 to 6.0% in 1993, and to 17.2% in 2008. Women were over-represented both in part-time jobs 
+and in any other non-standard arrangements (and still are in the most recent statistics). 
+At the same time, during the period ranging from the mid-1990s (when its employment 
+protection legislation was amongst the most rigid of the EU15 countries) to 2008 (when it was 
+amongst the most lax), Italy’s employment protection legislation (EPL) index underwent the greatest 
+decline of all OECD countries. The EPL index for temporary workers decreased from 5.25 in the late 
+1980s to 3.25 in 2001 and to 2.00 in 2003, while the EPL index for permanent workers has remained 
+constant at 2.76 since the 1980s because, as mentioned above, the legislation pertaining to permanent 
+contracts was not liberalized until the early 2010s. Finally, the share of workers with trade union 
+ 
+     
+10 
+ 
+membership fell dramatically over time. Union density rose steadily – from 24.7% of the labour force 
+in 1960 up to 50.4% in 1978 – and then constantly fell to 33.4% in 2008.2 
+ 
+Labour market deregulation and the complexity of early career trajectories 
+ 
+Early-career complexity across cohorts 
+The literature on individual-level outcomes of labour market flexibilization mostly examines changes 
+in job and employment security. Job insecurity refers to unstable contractual arrangements: in dual 
+labour markets, non-standard workers experience high job turnover and face high barriers to 
+accessing the core segments of the labour force (Barbieri & Cutuli, 2015; Gebel & Giesecke, 2016). 
+If such conditions persist over time, individuals experience long-lasting employment insecurity 
+(Wilthagen and Tros 2004), and temporary arrangements become a trap rather than being a stepping 
+stone into stable contracts. Employment insecurity is therefore an inherently longitudinal 
+characteristic of individuals’ working trajectories (Berton et al., 2009). 
+The life course literature has conceptualized the increasing longitudinal variation in careers, 
+which is driven by increases in non-standard employment relations, as differentiation (Brückner and 
+Mayer 2005). Differentiation refers to the increasing number of distinct events experienced over a 
+working lifetime (both within and outside of the labour market), taking into consideration their order, 
+timing, and duration. Hence, high differentiation implies unpredictable and non-linear employment 
+trajectories. In a highly deregulated context, where the social security system does not compensate 
+                                                        
+2  OECD figures based on the Jelle Visser database available at 
+https://stats.oecd.org/Index.aspx?DataSetCode=TUD 
+ 
+     
+11 
+ 
+for such employment insecurity, differentiation may translate into precariousness (Berton, Richiardi, 
+and Sacchi 2009; Kalleberg 2009). 
+Recent research by Van Winkle and Fasang (2017) looks at the differentiation in employment 
+trajectories and shows relative stability in career complexity between the ages of 15 and 45 in Europe. 
+However, the individuals in their sample were at an early stage in their careers before the mid-1970s. 
+This period was certainly characterized by dramatic changes due to economic tertiarization, 
+globalization, and technological change, but several European countries only implemented labour 
+market reforms that actively promoted de-standardization from the mid-1980s. Moreover, the 
+increasing differentiation that usually occurs during the first years of labour market participation is 
+likely to be moderated by the stability typical of later stages when considering a longer portion of the 
+employment life course.  
+ 
+Early-career complexity, gender, and socio-economic status across cohorts  
+In the context of economic globalization (Blossfeld et al., 2005), the restructuring of companies after 
+economic crises (Kalleberg, 2009), and job losses due to technological change (Oesch and Rodríguez 
+Menés 2010), labour market participation and employment in general have become less stable and 
+secure. More frequent unemployment episodes and increasing employment instability should 
+generate less predictable employment life courses. Two main theoretical perspectives refer to the 
+ways in which changes in labour market regulation have shaped career configurations over time: the 
+individualization of risk and persistent inequality perspectives. According to the individualization of 
+risk perspective, these processes should have resulted in unstable and extremely fragmented careers 
+for a large part of the labour force, independent of ‘traditional’ social stratification dimensions, such 
+as gender and socio-economic status (Beck 1992; Sennett 1999).  
+ 
+     
+12 
+ 
+By contrast, the persistent-inequality perspective argues that traditional stratification factors 
+should still strongly shape individuals’ exposure to labour market risks. Within this framework, the 
+concept of recommodification of risks (Breen, 1997) suggests that the organizational restructuring 
+processes triggered by labour market deregulation should transfer market risks to employees. These 
+risks would likely be allocated to groups depending on pre-existing power structures and stratification 
+dimensions, so that the negative outcomes of employment flexibility and the risk of unemployment 
+would not be spread across the whole population but would affect specific groups (Breen 1997; 
+Goldthorpe 2002). This study mostly focuses on gender and education. However, it also takes into 
+account that individual educational opportunities are affected by parental background characteristics 
+(see Hertz et al. [2007] for a comparative study, and Raitano & Vona [2018] for a focus on Italy).3  
+The rise in women’s education and labour-market participation was expected to bring about a 
+transition from more traditional to more egalitarian gender ideologies (Goldscheider et al., 2015). 
+However, gender stereotypes  persist in cultural beliefs and women are likely to be confronted with 
+gender-specific expectations regarding work-family commitment – even in countries with generous 
+reconciliation policies (Grunow et al., 2018). These findings may be relevant in a context of persistent 
+traditional gendered work-family roles, high levels of labour market deregulation, and little provision 
+of childcare services (Crompton 2002; Krüger and Levy 2001). We might expect women in their 
+                                                        
+3 There are two reasons for focusing on gender and education. First, as mentioned, Italy’s labour 
+market deregulation ‘at the margins’ was strongly intended to promote the labour market participation 
+and employability of disadvantaged workers, mostly women and low-skilled individuals. Second, the 
+economic policy debate has emphasized the role of education as the most important means of 
+reducing labour market risks. 
+ 
+     
+13 
+ 
+early careers to be more likely to work in flexible jobs than men because they anticipate and seek to 
+fulfil the requirements of their master status by demonstrating a stronger commitment to their 
+(current/future) family than to their career. Opting for a flexible job might be reinforced by 
+discriminatory hiring and firing practices of employers, because they anticipate (stereotypical) 
+lengthy and/or frequent breaks in women’s active participation over and above the compositional 
+effects in observable characteristics associated with rising female participation. 
+Against the backdrop of educational expansion, skill-biased technological change, and 
+increasing labour market segmentation, and given the reduction in relative demand for low-skilled 
+workers, we might expect less educated individuals to undergo multiple and long-lasting 
+unemployment episodes (DiPrete et al., 2006; Katz & Murphy, 1992). Further, we might also expect 
+them to be less likely to access the primary segment (Gebel & Giesecke, 2011, 2016) and to encounter 
+obstacles to stabilization in the short term (Hollister, 2011; Solga, 2002).  This extends to those from 
+less advantaged family backgrounds, who might experience higher degrees of early-career 
+complexity because the educational opportunities of children are generally constrained by parental 
+background (Hertz et al., 2007; Holmlund et al., 2011).  
+In recent decades, women have caught up with men in terms of educational attainment, even 
+overtaking them in several countries. Therefore, women entering the labour market are increasingly 
+well educated. Due to possible (self-)selection or discrimination, lower-educated women persistently 
+suffer from a type of double disadvantage (OECD 2017). As a result, gender employment gaps tend 
+to be widest amongst lower-educated men and women. We expect this to be reflected in the 
+complexity of early careers as well.  
+ 
+Research questions and hypotheses 
+ 
+ 
+ 
+     
+14 
+ 
+We first consider trends in early-career complexity across entry cohorts extending from before 
+to after the deregulation phase in Italy. We expect an increase in early-career complexity for workers 
+who entered the labour market in the early 1980s. We expect that this increase was even more acute 
+for those who entered during or after the mid-1990s, that is, during or after the period when 
+deregulation reached its climax (hypothesis 1).  
+We then explore possible heterogeneities in trends of early-career complexity by gender and 
+education.  On the one hand, we might expect early career trajectories to be more complex for all 
+workers who entered the labour market during the deregulation phase as well as after it, that is, 
+irrespective of their individual (observable) ascriptive or attained characteristics (hypothesis 2). On 
+the other hand, we could also expect: early-career differentiation to increase more for women than 
+for men across cohorts (hypothesis 3a); lower-educated workers to experience higher degrees of 
+early-career complexity when the potential for employment insecurity increases (hypothesis 3b); and 
+the early careers of lower-educated women to have increased in complexity more than (i) those of 
+men with the same education as well as (ii) those of highly educated women (hypothesis 3c). 
+ 
+Data and methods 
+ 
+Data and sample 
+We used the AD-SILC longitudinal dataset, which is constructed by linking information on 
+individuals interviewed in the 2005 cross-sectional wave of the IT-SILC (i.e. the Italian component 
+of the European Union Statistics on Income and Living Conditions–EU-SILC) to administrative 
+longitudinal records on all job relationships an individual had experienced up to 2009 provided by 
+INPS (Italian National Social Security Institute). AD-SILC is a retrospective unbalanced panel 
+ 
+     
+15 
+ 
+because individuals enter and exit the labour market in different years, and it includes almost 1.2 
+million observations nested in 43,388 individuals who appeared at least once in the INPS archives 
+between 1940 and 2009 and who were in the 2005 sample of the IT-SILC module. Appendix B 
+contains a detailed description of the AD-SILC dataset that also highlights advantages compared to 
+alternative data sources for Italy as well as its limitations. 
+For this article, we selected individuals who, after having completed their education, 4 
+experienced their first working episode lasting at least 13 weeks5 between 1974 and 2001 between 
+the ages of 15 and 34 (men=8,398; women=7,147). We observed individuals in the sample for seven 
+years, as this is the longest period for which we were able to follow those who entered into the labour 
+market between 1998 and 2001 (i.e. after the last deregulation reforms) in order to conclude the 
+observational window before the 2009 economic crisis.  
+Table 2 displays the distribution of the independent and control variables by gender, while 
+Table A1 in the Appendix presents the sample distribution by gender, education, and cohort. It 
+confirms the educational expansion over the last decades in Italy, especially for women.  
+ 
+[Table 2 here] 
+ 
+ 
+Sequence construction 
+                                                        
+4 The year in which own highest qualification was attained is recorded in the EU-SILC. 
+5 In Italy, 13 weeks is the threshold for eligibility for unemployment benefits. 
+ 
+     
+16 
+ 
+By adopting the sequence analysis framework, 6  we conceptualized early career trajectories as 
+sequences of categorical states to be analysed as they unfold over time rather than as a set of isolated 
+elements (Abbott, 1995). The objects of study were therefore entire trajectories instead of single 
+transitions between or durations in specific states: we understood early careers as individual 
+realizations of a ‘process outcome’ which entailed aggregate-level patterns and regularities (Abbott, 
+2016; Aisenbrey & Fasang, 2010).  
+We constructed 84-month-long sequences by coding each month according to labour-market 
+status at each time point:7 apprenticeship, full-time employment in the private sector,  part-time 
+employment in the private sector, employment in the public sector (we did not distinguish between 
+part-time and full-time arrangements in the public sector), self-employment (merchants, craftsmen, 
+and farmers), professionals (e.g. lawyers, architects, physicians), and joblessness (due to 
+unemployment or inactivity). 
+This approach did not take into account transitions between different jobs/employers if the 
+contractual arrangement did not change (e.g. transitions between full-time contracts in the private 
+sector). Therefore, we intended to emphasize the employment insecurity dimension rather than the 
+job insecurity connected to the duration of contracts in the transitions between states in individual 
+trajectories. In fact, direct job-to-job transitions between employers do not necessarily translate into 
+                                                        
+6 We performed sequence analysis using the R packages TraMineR and TraMineRextras (Gabadinho 
+et al., 2011) and Weighted-Cluster (Studer 2013), version R.3.6.2 (R Core Team 2019). 
+7 In the event of overlap of two different episodes, we prioritized the more ‘beneficial’ episode in 
+terms of stability and related benefits: e.g. we prioritized working episodes over non-employment. 
+ 
+     
+17 
+ 
+differentiation and possible precariousness as long as the individual in question remained employed 
+in the same occupation (Biemann et al., 2011; Hollister, 2012).8  
+Unfortunately, AD-SILC only began distinguishing between fixed-term and permanent 
+contracts in the private sector from 1998 onwards, and this distinction was never made for public-
+sector employees. Moreover, as mentioned, para-subordinate arrangements were only identified as 
+such from 1996 onwards. In fact, before 1996, para-subordinate arrangements were not recorded in 
+administrative social security records as they were exempt from social contributions. However, a 
+massive increase in the use of para-subordinate arrangements occurred after the introduction of the 
+Gestione Separata fund in 1995. We thus chose to code episodes in para-subordinate and temporary 
+jobs as employment in the private sector.  
+ 
+Complexity index of early careers  
+We used the complexity index (Gabadinho et al. 2011) to operationalize the differentiation of 
+individual sequences representing trajectories of early career trajectories. The complexity index of 
+sequence (x) was calculated as: 
+ 
+ 
+0 ≤ 𝐶(𝑥) =  √
+ℎ(𝑥)
+𝑥𝑚𝑎𝑥
+∗  
+𝑞(𝑥)
+𝑞𝑚𝑎𝑥
+ ≤ 1 
+ 
+ 
+                                                        
+8 We accounted for job-to-job transitions and for a more detailed definition of states used to construct 
+the sequences in a series of robustness checks. As the results were highly consistent with those 
+presented here, we prioritized sequences that more accurately reflected employment versus job 
+security. 
+ 
+     
+18 
+ 
+ℎ(𝑥) is the longitudinal entropy, or time spent in different states, and 𝑞(𝑥) refers to the number of 
+transitions between different states in the sequence. Both 𝑞(𝑥) and ℎ(𝑥) are divided by the respective 
+maxima, 𝑞𝑚𝑎𝑥  and 𝑥𝑚𝑎𝑥 . The complexity index is therefore the mean of the two components 
+normalized. For example, the sequences 𝐴𝐴𝐵𝐵 and 𝐴𝐵𝐴𝐵 have the same entropy, as the time spent 
+in the two possible states – A and B – is equal. However, the second is more complex (as it implies 
+three transitions between states), while the first only has one transition between states. The minimum 
+value of C=0 corresponds to sequences composed of one single state (i.e. no transitions) and entropy 
+equal to 0. The maximum value of C=1 corresponds to sequences in which (i) all possible states 
+appear, (ii) the same time is spent in each state, and (iii) all possible transitions between states occur.   
+Since we coded episodes in para-subordinate and temporary jobs as employment in the private 
+sector, the complexity index is the lower bound of actual complexity because it ignores transitions 
+between permanent and temporary employment and between employment and para-subordinate jobs. 
+Moreover, the value of the complexity index is underestimated for younger cohorts because 
+transitions between employment and para-subordinate arrangements and temporary and permanent 
+employment clearly increased in recent decades – at least in the case of Italy. Therefore, growing 
+complexity for the younger entry cohorts should be interpreted as an actual increase across cohorts. 
+Finally, note that we used an individual’s seven-year trajectory to compute a synthetic indicator 
+of this trajectory, i.e. the complexity index. Therefore, we use the longitudinal information available 
+in the dataset to compute the index and then proceed to run the empirical analyses using a single 
+observation for all individuals. 
+ 
+Regression analysis 
+ 
+     
+19 
+ 
+We estimated the complexity of early career trajectories by using ordinary least squares (OLS) 
+regression. Stepwise models were estimated for men and women separately. The first model includes 
+cohorts of entry into the labour market (entry years were grouped into five-year classes: 1974–1978, 
+1979–1983, 1984–1988, 1989–1993, 1994–1997, 1998–2001 – this is the main independent variable) 
+and is adjusted for area of residence (North-West, North-East, Centre, or South and Islands), age at 
+the time of the first employment episode (15–19, 20–24, 25–29, 30–34), and a dummy for those who 
+started to work at least one year after completing their highest level of education.9 The second and 
+third models include two indicators of socio-economic status separately, namely the individual’s 
+highest educational attainment (at most lower secondary, upper secondary, or tertiary) and parental 
+background (operationalized by the highest educational attainment amongst parents: at most lower 
+secondary education, or at least upper secondary education).10 Finally, the fourth model includes both 
+individual educational attainment and parental background. Formally:  
+ 
+                                                        
+9 We ran the regression models using cross-sectional weights for 2005 as provided by IT-SILC. 
+Therefore, the analytical sample is representative of the population living in Italy in 2005 (excluding 
+migrants) and of the labour market entry cohort as defined by the AD-SILC retrospective panel. 
+10 We acknowledge that parental education is not a perfect proxy for parental background, as the latter 
+encompasses several additional dimensions (e.g. cultural capital, economic resources, prestige, and 
+power). AD-SILC does not include information on parental incomes and the available occupational 
+classification does not allow us to precisely define social class. Therefore, we opted to use parents’ 
+education instead of occupation. Further, education captures both the parents’ earning potential and 
+their capacity to transfer human capital to their children (Chevalier et al., 2013). 
+ 
+     
+20 
+ 
+(1)  𝑦𝑐𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 = 𝛽0 +  𝛽1𝑒𝑛𝑡𝑟𝑦𝑐𝑜ℎ𝑜𝑟𝑡 +  𝛽2𝑎𝑟𝑒𝑎 +  𝛽3𝑎𝑔𝑒1𝑠𝑡_𝑒𝑚𝑝𝑙 +  𝛽4𝑙𝑎𝑡𝑒𝑒𝑛𝑡𝑟𝑦  
+(2) 𝑦𝑐𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 = 𝛽0 +  𝛽1𝑒𝑛𝑡𝑟𝑦𝑐𝑜ℎ𝑜𝑟𝑡 +  𝛽2𝑎𝑟𝑒𝑎 +  𝛽3𝑎𝑔𝑒1𝑠𝑡_𝑒𝑚𝑝𝑙 +  𝛽4𝑙𝑎𝑡𝑒𝑒𝑛𝑡𝑟𝑦 +
+ 𝛽5𝑒𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 
+(3) 𝑦𝑐𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 = 𝛽0 +  𝛽1𝑒𝑛𝑡𝑟𝑦𝑐𝑜ℎ𝑜𝑟𝑡 +  𝛽2𝑎𝑟𝑒𝑎 +  𝛽3𝑎𝑔𝑒1𝑠𝑡𝑒𝑚𝑝𝑙 +  𝛽4𝑙𝑎𝑡𝑒𝑒𝑛𝑡𝑟𝑦 +
+ 𝛽6𝑝𝑎𝑟𝑒𝑛𝑡𝑎𝑙𝑏𝑎𝑐𝑘𝑔𝑟𝑜𝑢𝑑 
+(4) 𝑦𝑐𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 = 𝛽0 +  𝛽1𝑒𝑛𝑡𝑟𝑦𝑐𝑜ℎ𝑜𝑟𝑡 +  𝛽2𝑎𝑟𝑒𝑎 +  𝛽3𝑎𝑔𝑒1𝑠𝑡_𝑒𝑚𝑝𝑙 +  𝛽4𝑙𝑎𝑡𝑒𝑒𝑛𝑡𝑟𝑦 +
+ 𝛽5𝑒𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 + 𝛽6𝑝𝑎𝑟𝑒𝑛𝑡𝑎𝑙𝑏𝑎𝑐𝑘𝑔𝑟𝑜𝑢𝑑 
+  
+Caveat and robustness check 
+First, because youth unemployment has increased across cohorts, the complexity’s trends might 
+be driven by multiple transitions between employment and unemployment as well as exposure to 
+unemployment at the beginning of a career – which is the case for younger cohorts in Mediterranean 
+welfare states.  Therefore, in robustness checks, we also estimated all models adjusting for number 
+of months spent in unemployment across the seven-year individual sequences. However, as a matter 
+of fact, the number of months spent in unemployment is endogenous to the sequences. Due to the fact 
+that results of this robustness check are highly consistent with those of the unadjusted model, we 
+focus on the latter in the results section.  
+Second, the regression analyses presented below are descriptive in the sense that we consider 
+whether the complexity of early career trajectories changed for cohorts of workers who were exposed 
+to the different phases of the labour market deregulation process. The adopted analytical strategy does 
+not allow us to identify a causal effect of deregulation on career complexity. Other macro-level 
+dynamics might have acted as potential confounders of the association of interest against the scenario 
+of the increasing of employers’ demand for flexibilization due to globalization, the widening of the 
+ 
+     
+21 
+ 
+divide between high-skilled and low-skilled workers driven by technological progress, and the 
+expansion of the spectrum of employment arrangements because of structural changes in the 
+productive system associated with the growth of the service sector (tertiarization) – see Blossfeld et 
+al. (2005) and Esping-Andersen and Regini (2000).  
+Because we do not consider individual outcomes at one specific point in time (e.g. the year) but 
+instead survey early career trajectories as a whole (as summarized by the complexity index built on 
+the seven-year trajectories), the only indicator we could use to partially account for such macro-level 
+dynamics is the unemployment rate. Specifically, in further robustness checks we adjusted the model 
+for: (1) the average unemployment rates between the first and the seventh year in the labour market 
+in the working-age population and (2) in the population of 15-24-year-olds; and (3) the average 
+unemployment rates between the first and the seventh year in the labour market in the female and 
+male working-age population and (4) in the female and male population of 15-24-year-olds.11 The 
+effect of these average indicators over a specific time-span that differs depending on the calendar 
+year the early career starts is likely to be captured by the cohort-effect already. In fact, as expected, 
+even after controlling for the different unemployment rates, the trend across cohorts persists in very 
+similar sizes and in comparable significance to the main results presented below. We opted for 
+parsimonious models unadjusted for unemployment rates as the averaged unemployment rates over 
+the seven-year observational window is an attempted and rough approximation of unemployment (or 
+any other macro indicator one might use) dynamics. Results are available upon request. 
+                                                        
+11 For the cohort 1974-1978, the unemployment rates are averaged starting from 1977 because the 
+ISTAT-Italian National Statistical Institute provide historical series that date back to 1977. 
+ 
+     
+22 
+ 
+A further caveat regards the comparison of cohorts over time, as their composition may have 
+changed. This is of special concern with respect to women, as female employment rates in Italy 
+steeply increased in the period studied here.12 Although we adjust our estimates for observable 
+individual characteristics (i.e. education, geographical macro-area of work, age at time of entry into 
+the labour market, and late entrance), we cannot empirically address the fact that our results might be 
+affected by changes over time in unobservable individual characteristics (e.g. their preferences for 
+leisure time or for specific employment arrangements, as well as their need to balance family and job 
+activities) due to data limitations, as AD-SILC does not include this information. In particular, 
+compositional effects in terms of unobservable characteristics might lead to a strong increase in career 
+complexity amongst women and low-educated individuals. Despite these limitations, our dataset can 
+provide detailed descriptive evidence about trends over time in early-career complexity and its 
+heterogeneity according to workers’ gender and socio-economic features. 
+Finally, it is important to point out that since our aim is to compare early career complexity 
+across several workers’ cohorts over a 35-year time span, any empirical quasi-experimental strategy 
+to infer causal links between labour market reforms (or other macro-level trends) and individual 
+outcomes in the labour market would, first, force us to abandon the complexity index as a synthetic 
+indicator of longitudinal dynamics of early career trajectories and, second, compel us to compare only 
+                                                        
+12 According to the National Institute of Statistics (ISTAT) data, the 15–64 female employment rates 
+increased from 33.5% in 1977 to 49.6% in 2018. 
+ 
+     
+23 
+ 
+a small number of cohorts  over a shorter period of time.13 However, as we have already highlighted, 
+the complexity index applied to employment trajectories responds to the empirical fact that our raw 
+data show that workers’ longitudinal experiences are largely heterogeneous and do not describe linear 
+upward trajectories. These would hardly be impossible to capture by focusing on specific 
+(traditionally studied) ‘point-in-time’ outcomes (e.g. unemployment spells or transitions across 
+contractual arrangements). 
+ 
+Results  
+ 
+Complexity of early careers across cohorts 
+Figure 1 displays the mean of the complexity index by gender and entry cohort. The complexity value 
+can theoretically vary between 0 and 1: the empirical maximum in our data is 0.391 and 0.436 for 
+men and women, respectively. The mean complexity increased across entry cohorts in a non-linear 
+fashion for both genders: it first rose for those who entered in the early 1980s and underwent a sharp 
+increase from the mid-1990s onwards, which is when the labour market deregulation process began 
+(see Table 1).  These findings suggest gender heterogeneities in how the pace at which exposure to 
+labour-market deregulation is associated with longitudinal early-career differentiation across cohorts. 
+ 
+[Figure 1 here] 
+                                                        
+13 Studies that try to infer – through DID or RDD techniques – the causal effect of labour market 
+reforms on workers’ outcomes necessarily compare few and very close in time workers cohorts (see 
+e.g. Raitano and Fana [2019] for Italy). 
+ 
+     
+24 
+ 
+ 
+To better illustrate the meaning of changes in complexity across cohorts, Figure 2 shows the 
+distribution of the complexity index amongst workers according to intervals computed with respect 
+to the value of one or more standard deviations of such an index over the total sample (s.d.=0.074). 
+We found that the share of women whose early careers were characterized by complexity increased 
+by more than two standard deviations, from 12.2% to 26.7% across entry cohorts, while the share of 
+early career trajectories with complexity equal to 0 decreased from 27.8% to 17.7%. In both cases, 
+the differential was more pronounced for the two youngest cohorts. This general trend also applied 
+to men, but since men’s early careers were already relatively more complex amongst older entry 
+cohorts, the increase in complexity was less pronounced: 25.6% of the sample of the youngest cohorts 
+displayed very high complexity versus 19.4% for the oldest, while 23.3% and 27.4% of the youngest 
+and the oldest workers, respectively, experienced complexity equal to 0.  
+ 
+[Figure 2 here] 
+ 
+These descriptive results might be confounded by changes in the observable characteristics of 
+individuals across cohorts due to educational expansion and increasing women’s labour market 
+participation. Therefore, although our analysis cannot provide causal evidence of the link between 
+labour market deregulation and early-career complexity, we ran a set of OLS regression models to 
+estimate the association between the complexity index and entry cohort, adjusting for observable 
+individual characteristics. Table 3 displays the results of separate models for men and women. 
+Support for hypothesis 1 is provided by the non-linear increase in the size of the complexity index 
+across entry cohorts, as shown by the estimated coefficients: the baseline models M1 (i.e. not adjusted 
+ 
+     
+25 
+ 
+for workers’ and parents’ education) show that the most recent cohorts of both men and women 
+experienced a non-liner rise in complexity. Substantiating hypothesis 3a rather than hypothesis 2, our 
+findings show that for men, early-career complexity significantly increased only for the two youngest 
+cohorts (1994–1997 and 1998–2001) compared to the 1974–1978 reference cohort. By contrast, 
+amongst women, early-career complexity started to increase significantly for those who entered the 
+labour market in the early 1980s.   
+Changes in complexity across cohorts remained significant after adjusting for workers’ 
+education (models M2 in Table 2). As expected, higher educational attainment was associated with 
+lower complexity. Moreover, because younger cohorts were, on average, more educated than the 
+older ones, the size of the effects for the different cohorts increased when adjusting for education. 
+When adjusting for socio-economic status proxied by parental education instead of workers’ own 
+educational attainment (models M3 in Table 2), we found further support for the persistent inequality 
+hypothesis – a more advantageous family background was associated with lower early-career 
+complexity for both men and women.14 However, the effect of parental characteristics on workers’ 
+early-career complexity was almost fully explained by the better educational opportunities of those 
+from a more advantageous background. In fact, when adjusting for workers’ own education, the 
+coefficient for parental education was no longer statistically significant (models 4 in Table 4). 
+                                                        
+14 Note, however, that 75% of all missing values on parental education concerned the youngest cohort 
+(which had 22% of missing values on this variable). In fact, the ad-hoc IT-SILC 2005 module on 
+‘Intergenerational transmission of poverty’ that collects this information only applied to those who 
+were at least 25 years old in 2005. Thus, those in the youngest cohort who entered at a very young 
+age were excluded from the models adjusted for parental education.  
+ 
+     
+26 
+ 
+ 
+[Table 2 here] 
+ 
+Figure 3 displays the predicted values of the complexity index for entry cohorts divided by 
+gender and education. Overall, striking differences between genders emerged when considering not 
+just the comparison across cohorts within each gender but also the levels of complexity (panels (a)). 
+On average, the older cohort of men, i.e. the 1974–1978 cohort, exhibited higher complexity values 
+than the same cohort of women (0.079 versus 0.062, respectively). A crossover of complexity was 
+observed for men and women across cohorts, as women’s early-career complexity increased at a 
+much quicker rate across cohorts. The 1984–1988 entry cohort for women eventually reached the 
+same complexity level as men (0.081 and 0.082, respectively), meaning that the early careers of 
+younger cohorts of women displayed higher differentiation than those of men, reaching the highest 
+value of 0.121 for the cohort 1998-2001. These findings further substantiate hypothesis 3a, namely 
+that there was higher early-career differentiation for women across cohorts of workers exposed to 
+increasing labour market deregulation. 
+ 
+ [Figure 3 here] 
+ 
+Figure 3 also shows the predicted complexity by education. Consistent with hypothesis 3b, 
+lower educated workers experienced higher degrees of early-career complexity as the deregulation 
+process proceeded compared to those with upper secondary education or more. In fact, for men and 
+women with tertiary education (panels (c)), the early-career complexity remained relatively low 
+across cohorts, while more recent cohorts of workers with lower and upper secondary education 
+ 
+     
+27 
+ 
+displayed a much higher complexity than the older cohorts. Yet, for men, the increase in early-career 
+variability was non-linear, as it only concerned the two more recent cohorts (1994–1997 and 1998–
+2001), that is, those more exposed to the late-1990s deregulation phase. Instead, the dynamic across 
+cohorts for women followed a (non-linear) inverse S-shape: complexity increased from the 1974–
+1978 cohort to the 1979–1983 cohort and then stagnated, only to increase again for the two youngest 
+cohorts – the 1994–1997 and 1998–2001 cohorts. These findings therefore support hypothesis 3c in 
+that, first, the early-career complexity of lower-educated women grew more rapidly compared to the 
+complexity for both low-educated men and high-educated women, and, second, the complexity value 
+was highest for the 1998–2001 cohort of low-educated women.  
+Note that we do not present the predicted probabilities by gender, cohort, and parental education 
+because none of the cohorts exhibited statistically significant differences in the complexity index 
+between workers with high and low parental education for both genders. Results are available upon 
+request. 
+Additional evidence regarding the number of transitions between states and the number of 
+months spent in each state during the seven-year-long observational window substantiates this 
+interpretation. Figure 4 shows that the increase in complexity for the subsample of women could be 
+partially explained by the decrease across cohorts in the share of individuals who never changed 
+states. This mainly affected women with a tertiary degree, whose early career trajectories were 
+characterized by steady complexity values across cohorts. By contrast, the share of men who never 
+changed states decreased only for those with an upper secondary education. Therefore, the complexity 
+experienced by the newest entry cohort of workers was likely driven by increasing transitions between 
+different states within the labour market. The most recent cohorts of highly educated men and women 
+experienced an increase in working time versus joblessness, so that their early-career complexity was 
+ 
+     
+28 
+ 
+less influenced by the number of episodes of joblessness or their length. In fact, the number of 
+transitions increased across cohorts for less educated individuals. Finally, the increase in early-career 
+differentiation for (mostly low-educated) women was associated with an increase in the average 
+number of transitions and different states they had experienced. 
+It has been proposed that highly educated individuals may benefit from the increased 
+availability of temporary arrangements (especially if these are in prestigious occupations). These 
+individuals may opt for them more consciously than lower-educated workers because they believe 
+temporary arrangements will offer different work experience and will improve their chances of 
+upward career mobility (De Jong et al., 2009). Although we cannot assess whether the higher 
+complexity of early career trajectories is a result of individual preferences, our results indicate lower 
+complexity for individuals with tertiary education and no changes across cohorts. If some sort of 
+strategic behaviour was relevant, it does not seem to have changed during the deregulation process, 
+when the institutional structure began to offer more options for flexible arrangements. These 
+considerations underpin our interpretation of high early-career complexity as an indicator of 
+uncertainty, unpredictability, and, ultimately, precariousness.  
+ 
+ 
+Discussion and concluding remarks  
+ 
+ 
+Labour market deregulation might have generated less stable and more complex employment life 
+courses. Exposure to highly volatile early career trajectories has long-lasting consequences over the 
+course of a working life, especially in contexts where the insurance-based welfare states make 
+lifetime earnings dependent on a favourable entry into the labour market (Chauvel and Schröder 
+2014). It is therefore especially important to consider how these processes affect younger workers in 
+ 
+     
+29 
+ 
+countries like Italy, where deregulation ‘at the margins’ of the labour market has been characterized 
+by a notable age divide. This article has contrasted two approaches – individualization of risk versus 
+the persistent inequality hypothesis – by looking at heterogeneity in early-career complexity by 
+gender and socio-economic status. It considered workers who entered the labour market before and 
+after the deregulation phase.   
+ By adopting a ‘differential’ life course sociology perspective, the analyses looked at one country 
+case over time to highlight linkages between institutional configurations and employment outcomes. 
+Instead of relying on cross-sectional indicators of working statuses, we compared seven-year-long 
+early career trajectories of six cohorts of young workers who experienced their first employment 
+episode between 1974 and 2001. We used an innovative longitudinal dataset built by merging survey 
+data with administrative data about working histories and applied sequence analysis techniques to 
+calculate longitudinal employment life course variability as operationalized by a complexity index 
+that captures stability and mobility between different spells in employment and out of the labour 
+market, accounting for their length and recurrence. Even though our analyses could not test causal 
+relations, they allowed us to display the pace at which exposure to the labour market deregulation 
+process was associated with longitudinal early-career differentiation.  
+ Our results support hypothesis 1 in the sense that early-career complexity increased across 
+cohorts as the deregulation process advanced. However, there are differences across gender and 
+socio-economic status. Specifically, in line with the persistent inequality hypothesis, we found gender 
+differences in the pace of the increase in complexity but also in its levels (hypothesis 3a): women’s 
+early-career differentiation grew faster and to a greater extent than men’s. However, this dynamic 
+was driven by low- and medium-educated individuals (hypothesis 3b) amongst whom the youngest 
+cohorts of women displayed the highest values of early-career complexity (hypothesis 3c). We 
+ 
+     
+30 
+ 
+additionally show that the effect of parental background on the differentiation of young people’s 
+labour market trajectories was almost fully explained by the educational opportunities associated with 
+such backgrounds. 
+Drawing on these findings, we argue that the inadequate employment conditions for younger 
+cohorts were not due to fewer occupational opportunities – which were supposed to increase in 
+number due to labour market deregulation – but resulted from the decline in opportunities for 
+employment stability (or continuity) in the long run. All in all, the increasing career complexity for 
+entry cohorts is a feature of middle- and low-educated workers rather than of high-educated ones, 
+which indicates a rising skill divide amongst young people. This is likely to result in an age cleavage 
+of differential exposure to precariousness, as this is a context where deregulation has occurred ‘at the 
+margins’. The Italian case is telling in this respect because flexibilization targeted young workers 
+who, as a result, became highly vulnerable to unprotected employment. These results speak to the 
+insiders/outsiders literature, as we used an indicator of early-career complexity based on individuals’ 
+longitudinal career trajectories that hints at their exposure to precariousness. It therefore offers 
+evidence of labour market dualization in terms of a sharp cohort divide resulting in long-lasting 
+cleavages in labour market participation.      
+ In addition to the limitations highlighted above, which hint at prospects for future work, we 
+were not able to account for one crucial dimension because of the lack of data. Specifically, we could 
+not trace the geographical mobility of workers for the first job for all cohorts in the sample. This 
+might be more relevant given the persistent North-South divide in Italy, which is largely based on 
+differentials in labour market opportunities that still trigger massive migration from the South to the 
+North. Moreover, a specific focus on sectors of activity might suggest complementary explanations 
+to increasing early-career complexity. In fact, the trend towards a service economy – characterized 
+ 
+     
+31 
+ 
+by a wider spectrum of jobs and, usually, higher worker flexibility with respect to manufacturing – 
+may have favoured more complex careers.  Finally, future research should address the direct role of 
+other life course events (e.g. childbirth) in the context of underdeveloped care services (Pacelli, 
+Pasqua, and Villosio 2013) and to the role of the persistence of traditional gender roles for labour-
+market participation (Grunow, Begall, and Buchler 2018). 
+ Notwithstanding these limitations, our results represent an important point of departure for 
+extending the analysis to countries that have experienced similar patterns of institutional change. 
+Moreover, the findings are relevant for future analyses of the aftermath of the economic crisis after 
+2008 on early career trajectories: more frequent layoffs of temporary workers and more frequent 
+joblessness generated higher complexity, which will have severely negative consequences for future 
+incomes and pensions. It will also erode career opportunities due to weakening human capital and 
+increasing skill mismatches.  
+ 
+32 
+ 
+References  
+ 
+Abbott, A. 1995. “Sequence Analysis: New Methods for Old Ideas.” Annual Review of Sociology 21 (1): 
+93 –113. 
+Abbott, Andrew. 2016. Processual Sociology. Chicago: Chicago University Press. 
+Aisenbrey, S., and A. E. Fasang. 2010. “New Life for Old Ideas: The ‘Second Wave’ of Sequence 
+Analysis Bringing the ‘Course’ Back Into the Life Course.” Sociological Methods & Research 
+38 (3): 420–462. 
+Autor, David H., and Susan N. Houseman. 2010. “Do Temporary Help Jobs Improve Labor Market 
+Outcomes for Low-Skilled Workers? Evidence from ‘Work First.’” American Economic Journal: 
+Applied Economics 2 (3): 96–128. 
+Barbieri, P. 2009. “Flexible Employment and Inequality in Europe.” European Sociological Review 25 
+(6): 621–628. 
+Barbieri, P., and Giorgio Cutuli. 2015. “Employment Protection Legislation, Labour Market Dualism, 
+and Inequality in Europe.” European Sociological Review, April, jcv058. 
+https://doi.org/10.1093/esr/jcv058. 
+Barbieri, P., Giorgio Cutuli, Ruud Luijkx, Gabriele Mari, and Stefani Scherer. 2016. “Substitution, 
+Entrapment, and Inefficiency? Cohort Inequalities in a Two-Tier Labour Market.”

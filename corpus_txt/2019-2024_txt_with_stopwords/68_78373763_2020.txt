@@ -1,0 +1,263 @@
+Artificial Intelligence for Managing the Complexity of the Socio-Economic Systems towards Horizon 2020 and Agenda 2030
+
+ArcHistoR EXTRA  6 (2019) 
+www.archistor.unirc.it
+La Mediterranea verso iL 2030
+studi e ricerche sul patrimonio storico e sui paesaggi antropici, 
+tra conservazione e rigenerazione
+a cura di Marina Mistretta,
+Bruno Mussari, Adolfo Santini
+t h e  M e d i t e r r a n e a  t o w a r d s  2 0 3 0
+s t U d i e s  a n d  r e s e a r C h  o n  h i s t o r i C a L  h e r i t a G e  a n d 
+a n t h r o P i C  L a n d s C a P e s ,  C o n s e r v at i o n  a n d  r e G e n e r at i o n 
+ISSN 2384-8898
+ISBN 978-88-85479-08-1Supplemento di ArcHistoR 12/2019 
+tiziana Ciano, iside rita Laganà, Bruno antonio Pansera, 
+Massimiliano Ferrara
+tiziana.ciano@unirc.it, isiderita.lagana@unirc.it, bruno.pansera@unirc.it, 
+massimiliano.ferrara@unirc.it
+I semi dell’Intelligenza Artificiale (AI) furono piantati da filosofi classici 
+che tentarono di descrivere il processo del pensiero umano come la 
+manipolazione meccanica dei simboli. L’AI è un’area di informatica 
+che enfatizza la creazione di macchine intelligenti che funzionano e 
+reagiscono come gli umani. Alcune delle attività che i computer con AI 
+possono progettate includono: riconoscimento vocale, apprendimento, 
+pianificazione, problem solving e set fuzzy. Negli ultimi 15 anni, Amazon, 
+Google e altri hanno sfruttato l’apprendimento automatico per il loro 
+enorme vantaggio commerciale. L’apprendimento automatico alla 
+base dell’AI è la pratica dell’uso di algoritmi per analizzare i dati al fine 
+di fare una determinazione o una previsione su qualche fenomeno. 
+La modellazione fuzzy ci aiuta ad affrontare i fenomeni inclusi i 
+parametri e le condizioni incerti, ci fornisce strumenti per modellare 
+il sistema considerato nel mondo reale e avvicinarci molto più al suo 
+comportamento. Il set fuzzy, quindi, rappresneta una classe di oggetti 
+con un continuum di gradi di appartenenza. Il quadro sopra descritto ci 
+dà un modo naturale di affrontare fenomeni così imprecisi, quando le 
+classi di oggetti mancano di criteri precisi di adesione per i loro elementi. Il 
+contesto da consideare terreno fertile scientico concerne la gestione della 
+complessità dei moderni sistemi antropici socio-economici (Città, Aree 
+urbane e il loro sviluppo socio-sostenibile).
+Intelligenza artificiale per la gestione della complessità 
+dei sistemi socio-economici verso Horizon 2020 
+e Agenda 2030
+DOI: 10.14633/AHR150
+139
+t h e  M e d i t e r r a n e a  t o w a r d s  2 0 3 0
+s t U d i e s  a n d  r e s e a r C h  o n  h i s t o r i C a L  h e r i t a G e  a n d 
+a n t h r o P i C  L a n d s C a P e s ,  C o n s e r v at i o n  a n d  r e G e n e r at i o n 
+Artificial Intelligence for Managing the Complexity 
+of the Socio-Economic Systems towards Horizon 2020 
+and Agenda 2030
+tiziana Ciano, iside rita Laganà, Bruno antonio Pansera, Massimiliano Ferrara
+The Emergence of AI in the Age of Sustainable Development
+Jeffrey Sachs, professor of health policy and management at Columbia University, postulated that 
+the world is entering a new Age of Sustainable Development, an epoch in which the nations of the 
+world must collaborate and contribute to address the most intractable problems of persistent extreme 
+poverty, social exclusion, economic injustice, poor governance, and environmental degradation1. Sachs 
+was also a senior advisor to the UN on the SDGs and the Millennium Development Goals and is currently 
+the director of the UN Sustainable Development Solutions Network (UNSDSN). At the 2002 UN World 
+Summit on Sustainable Development (WSSD) in Johannesburg, he proposed a framework for analyzing 
+sustainable development through the four pillars of economic development, social development, 
+environmental protection, and good governance. Each of these four components are independent and 
+mutually reinforcing pillars, but they are all essential to sustainable development in the world (World 
+Summit of Sustainable Development [WSSD], 2002). Through the UNSDSN, Sachs deﬁned problems on 
+sustainable development proposed solutions, and provided reams of data on phenomena related to 
+global sustainability. However, AI is such a novel, dynamic and rapidly evolving phenomenon that its 
+impacts on the work of advancing the SDGs are just emerging and have yet to be extensively studied.
+1. Sachs 2015.
+140
+Much research has been published about the emergence of artiﬁcial intelligence from its inception 
+until the current era. Industry trade magazines and academic journal articles have added to the 
+body of research as innovators in various ﬁelds incorporate AI experimentally into theory, thought 
+processes, and practical solutions to problems. At ﬁrst, there was an abrupt rise in AI investment, and 
+then, after narrow returns investments declined, increased, and declined, in a somewhat consistent 
+pattern over AIs history2. AI has been on a roller coaster ride of success and failure.
+While some people herald the increase in utilization of AI as a vision of increased economic 
+prosperity, improved leisure and free time, others such as Elon Musk, Stephen Hawking, and Bill 
+Gates, caution that increases in  AI  utilization  will  exacerbate  global economic inequity and herald 
+an existential crisis for humanity3. It could herald a new long wave of 40-60 years in length (called 
+the Kondratiev Wave), which portends a new cycle of sustained industrial innovation and economic 
+growth. Russian economist Nikolai Kondratiev ﬁrst observed this phenomenon of business cycles 
+of booms followed by busts in his 1925 book, The Major Economic Cycles, and Joseph schumpeter 
+named these economic cycles Kondratieff waves in his honor4. 
+Undoubtedly, AI could be a powerful force that can spark decades of economic growth, which is 
+one of the four tenets of sustainable development5.
+AI can currently be divided into two types: Narrow Artiﬁcial Intelligence (NAI) and artiﬁcial general 
+intelligence (AGI). NAI, which includes all current AI, is considered to be a weaker form of AI. To 
+date, AGI remains theoretical but is rapidly becoming feasible as its application proliferates. A subset 
+of AGI is Human-Level Machine Intelligence (HLMI), which is idealized as being able to perform as 
+effectively as an extremely gifted human in all intellectual tasks6. This is the speciﬁc genre of AI that 
+causes fear in some people, since it would not just take jobs in the short term but could also supplant 
+humankind as the apex species on the planet in the long-term.
+AGI is closer to becoming reality as bio-humanoid roboticists, such as the life-like robots created 
+by David Hanson, Ben Goertzel, and other pioneers in the ﬁeld become more commonplace and 
+acceptable7. These trail-blazing inventors seek to create a database that would collect the knowledge 
+2. Munoz, Naqvi 2018.
+3. Sainato 2015. 
+4. Barnett 2002.
+5. Sachs 2015.
+6. Phis.Org 2018.
+7. Goralski, Górniak-Kocikowska 2017; Goralski, Górniak-Kocikowska 2018.
+Artificial Intelligence
+141
+of all bio-humanoid robots into one receptacle, OpenCog, that could be instantaneously distributed to 
+all bio-humanoid robots. AI knowledge would be cumulative and evenly distributed. While AGI could 
+cause widespread displacement of jobs through improved eﬃciencies in production  and  distribution, 
+NAI is already causing gross displacement of jobs and disruptions in established professions. One 
+example highlighted in an article titled Artificial Intelligence states that “Goldman Sachs employed six 
+hundred traders in 2000,  the  corporation  was  able  to  reduce  their number of human traders to 
+two by 2017 because of advances in narrow AI”. On the other end of the spectrum, people believe 
+that the results of heightened utilization of AI could solve the problems of income inequality, which 
+is related to Reduced Inequalities. However, since the results of superior production and eﬃciency 
+gains have not been distributed equally in the past, it is unrealistic to believe that those who develop 
+and own the next generation of AI technology, would distribute the rewards widely instead of 
+narrowly by increasing their own wealth. This could create a concentration of wealth and increase 
+the gap between the haves and have-nots.
+This unequal distribution of wealth, knowledge, and power would not just exist on an individual 
+level but would also be concentrated in speciﬁc countries and cities creating even deeper worldwide 
+disparity, once again impeding the achievement of Reduced Inequalities. Work that has previously 
+been exclusive to human experience can already be performed better and faster by AI, which not 
+only creates a calamitous situation for employment, but also added stress for the human psyche8. 
+A majority of workers could be displaced when AGI exceeds the capabilities of the average human 
+in various economic roles. In January 2015, Stephen Hawking, Elon Musk, and dozens of artiﬁcial 
+intelligence experts published an open letter calling for research on the societal impacts and 
+unintended consequences of AI. The letter acknowledged the potential beneﬁts of AI, but also raised 
+the specter of automated weapons and uncontrollable machines escalating armed conﬂicts that may 
+lead to human extinction9. Recently, Stanford University launched an institute for Human-Centered 
+Artiﬁcial Intelligence (HAI) that will bring together experts from various ﬁelds like economics, 
+philosophy, ethics, psychology et al.10.
+8. See note 7.
+9. See note 3.
+10. Marconi 2019.
+142
+ AI and the Water Crisis: the Case of Smart Water Management
+“Water is essential for life. For thousands of years, human settlement and advancement has 
+been dictated by a reliable supply of clean, safe water. In the face of a ﬁckle supply system, people 
+ﬂourished, moved or perished”11. Water and sanitation are at the center of the SDG resource triad. It 
+touches on, and impacts, women’s empowerment and gender equality, food and agriculture, energy 
+and climate, and infrastructure & technology.
+Water is widely used in agriculture, industry, and also in the domestic household. Each day, cities 
+and communities around the world work on millions of tons of raw water, processed water and waste 
+water to service the needs of human civilization. Water must be adequately treated and transported 
+in accordance to hygiene and health standards to ensure its quality and properties will meet the 
+speciﬁcations demanded by the end users. In recent years, there is movement to leverage on the 
+emerging technologies to offer sustainable solutions for treatment, transportation and the recycling 
+and reuse of water.
+While the world’s supply of water is more than adequate to meet all current needs and demands, 
+the treatment and distribution facilities and networks are not12. There are still many communities 
+in the developing world in which the water resources are inadequate to meet household, economic 
+development and environmental needs. In such regions, the shortage of potable, clean water to meet 
+human drinking water and sanitation needs continues to affect human health and productivity and 
+hence economic development, as well as the protection of the environment and natural ecosystems. 
+The choices that communities, cities, and nations make regarding the management of water 
+resources have great implications on our future welfare. Some have compromised their future security 
+or sustainability by disrupting and overusing freshwater supplies, overdrawn groundwater aquifers; 
+polluted natural water bodies such as estuaries, coasts and oceans; and degraded ecosystems that 
+sustain the food chain. Humanity must leverage the advances in technology and AI innovation to 
+enable it to satisfy short-term economic demand and at the same time safeguard the long-term 
+environmental sustainability of natural ecosystems and bioregions.
+While water sources and water supplies may not have changed substantially over time, the 
+management tools available in the ﬁeld have evolved. Water utilities are assisted by smart water 
+11. Hill 2018.
+12. Cosgrove, Loucks 2015.
+Artificial Intelligence
+143
+management that is powered by AI13. “Progress on new artiﬁcial intelligence (AI) technology could 
+make monitoring at water treatment plants cheaper and easier and help safeguard public health”14. 
+While the ﬁrst AI-driven software utilized expert systems or rule-based algorithms to decide on 
+outputs or to analyze alternatives in a ﬁeld of choices, the newer AI tools replicate the way that 
+humans learn in its just-in-time applications.
+In the learning phase, the input data is correlated to known outputs to allow the algorithms to 
+learn over time. Then, in the “operational phase”, the program begins to make sense of patterns as 
+new data is introduced. Because of AI’s ability to constantly adapt and process large amounts of data 
+in real-time, it is an ideal tool for managing water resources in an ever-changing environment, and 
+the business of water, allowing water utility managers to maximize current revenue and effectively 
+plan for the years ahead.
+By utilizing these new software-as-service platforms, new dynamic strategic ﬁnancial operations 
+can be created and managed for water utilities to signiﬁcantly improve productivity and cost-savings. 
+The system also incorporates low-cost sensors and communication networks to track real-time water 
+loss and manage distribution networks. “The power of AI unleashes the imagination of our water 
+professionals”15. This is an interesting turn of phrase since at this time in the water utility industry, 
+the ability of AI to combine growth projections with future water availability and infrastructure 
+condition assessment allows managers to maximize decisions and investment in the infrastructure.
+However, as with all narrow AI, the system is only as good at the data that is being supplied to it 
+and the managerial under- standing of the output that is being produced by the data. And, as with all 
+AI, as AI asks the questions and supplies the responses, humans are deprived of some of the insight 
+that they previously had access to from ﬁnding solutions to the problems themselves. For now, 
+human interpretation is still needed, but as AI becomes more astute and the responses and solutions 
+become more prevalent, then human interaction will become less important and the tipping point 
+will become more obvious. Ultimately, the goal of AI is not to be perfect, AI simply needs to do better 
+than humans16. Despite the transition that may present some diﬃculty and risks, the use of AI in 
+water management has the potential to increase productivity, improve water conservation of this 
+precious resource and thereby advance the achievement of a number of Global Goals.
+13. See note 13 and  O’Connor 2017.
+14. Phis.Org 2018. 
+15. See note 13.
+16. Kaufman 2018.
+144
+Conclusions
+In this paper we present a model of AI for smart water management. All this effort would lead to 
+the realization of an important sustainable development, it would create those conditions that would 
+lead a decision maker to transfer AI facilities into the Socio-economic systems of the future with 
+certain «smart» characteristics and produce a saving in economic terms and above all safeguarding 
+those perishable raw materials, applying the Kyoto protocol as widely as possible.
+The operating platform was provided by Horizon 2020 which, as an European operational strategy, 
+had already  laid the foundations for spreading a culture of sustainability declined in its various facets. 
+As regards the concept of Smart city, urban sustainability et similia will ﬁnd a great development 
+thanks to the use of the tool of AI. 
+With this paper, we wanted to provide a timid but substantial contribution towards the 
+identiﬁcation of some of the scientiﬁc features concerning the AI, which naturally ﬂow towards the 
+achievement of the objectives identiﬁed with Agenda 2030 through Horizon 2020.
+Figure 1. Technology 
+and enviromment a 
+Joint Combination for 
+Sustainability, https://
+www.fundacred.org.
+br/site/2019/06/26/
+conferencia-
+internacional-debate-
+economia-verde-em-
+fortaleza/ (accessed 30 
+March 2019).
+Artificial Intelligence
+145
+Bibliography
+Agraval, Gans, Goldfarb  2018 - A. Agraval, A. Gans, J. Goldfarb, Prediction machines: the simple economics of artiﬁcial 
+intelligence, harvard Business review Press, Boston 2018.
+AI-Driven Test System Detects Bacteria in Water. Intel. Retrieved from, https://sofwre.itel.com/enus/aticles/ai-driven-test-
+system-detects-bacteria-in- water (accessed 30 March 2019).
+Phis.Org 2018 - Phis.Org, Artificial intelligence technology could help protect water supplies, https://phys.org/news/2018-
+07-artiﬁcial-intelligence- technology.html (accessed 30 March 2019).
+Artificial Intelligence, Opposing viewpoints online collection, Gale, Opposing viewpoints in «context», http://link.galegroup.
+com/apps/ doc/PC301099927/OVIC?u=a13qu&sid=OVIC&xid=a6804b12 (accessed 30 March 2019).
+Barnett 2002 - V. Barnett, Which was the “real” Kondratiev: 1925 or 1928?, in «Journal of the History of Economic 
+thought», 2002, 24/4, pp. 475-478.
+Cosgrove, Loucks 2015 - W.J Cosgrove, D.P Loucks, Water management: Current and future challenges and 
+research directions. Commentary, in «water resources research», https://agupubs.onlinelibrary.wiley.com/doi/
+epdf/10.1002/2014WR016869 (accessed 30 March 2019).
+Goralsky, Górniak-Kocikowska 2014 - M.A. Goralski, K. Górniak-Kocikowska, A New Frontier in Ethics Education: Robotics, 
+paper prensented at the Academy of International Business-Northeast, Chapter special Conference, Tianjin China 2014.
+Goralski, Górniak-Kocikowska 2017 - M.A. Goralski, K. Górniak-Kocikowska, Globalization, codiﬁcation, automation, 
+and artificial intelligence: Job affectation, Presented at the academy of international business–US–NE conference, temple 
+University, Philadelphia 2014.
+Goralsky, Górniak-Kocikowska 2018 - M.A. Goralski, K. Górniak-Kocikowka, Permissionless evolution of ethics. Artificial 
+Intelligence, in Munoz, Naqvi 2018, pp. 69-78.
+Goralski, O’Connor 2018 - M.A Goralski, M. O’Connor, Global Entrepreneurship & Innovation: Artificial Intelligence, 
+Open Cog, and Blockchain, Presented at the academy of international Business-Us-ne regional Conference, Global 
+Entrepreneurship & Innovation (Drexel University October 19-20 2018), Philadelphia PA 2018.
+Hill 2018 - T. Hill, How artiﬁcial intelligence is reshaping the water sector, in «water Finance & Magment», https://waterfm.
+com/artiﬁcial- intelligence-reshaping-water-sector/ (accessed 30 March 2019).
+Kaufman 2018 - d Kaufman, Watch out workers, algorithms are coming to replace You maybe. (An intview with Israeli 
+author and historian Yuval Noah Harari.), in «The New York times», https://www.nytimes.com/2018/10/18/business/q-
+and-a-yuval-harari.html (accessed 30 March 2019).
+Marconi 2019 - F. Marconi, AI pioneer Fei-Fei Li on building benevolent machines, in «wall street Journal», https://www.
+wsj.com/articles/ai-pioneer-fei-fei-li-on-building-benevolent-machines-11552906800?mod=searchresults&page=1&p
+os=1 (accessed 30 March 2019).
+Munoz, Naqvi 2018 -  J.M. Munoz, Al Naqvi (eds.), Business strategy in an artificial intelligence economy, new York, NY: 
+Business Expert Press, New York 2018.
+Penn 2017 - F. Penn,  Stephen Hawking: Self-evolving artiﬁcial intelligence (AI) has a free will & may destroy H.,  https://
+www.youtube.com/ watch?v=U2yhVCTC4sg (accessed 17 March 2019).
+Sachs 2015 - J.D. Sachs, The Age of sustenaible development, Columbia University Press, new York 2015.
+Sainato 2015 - M. Sainato, Stephen Hawking, Elon Musk, and Bill Gates warn about artiﬁcial intelligence, in «The Observer», 
+https://observer.com/2015/08/stephen-hawking-elon-musk-and-bill-gates-warn-about-artiﬁcial-intelligence/ (accessed 
+30 March 2019).

@@ -1,0 +1,983 @@
+Complexity Theory, Game Theory, and Economics: The Barbados Lectures
+
+Barbados Lectures on Complexity
+Theory, Game Theory, and Economics
+Tim Roughgarden
+29th McGill Invitational
+Workshop on Computational Complexity
+Bellairs Institute
+Holetown, Barbados
+ar
+X
+iv
+:1
+80
+1.
+00
+73
+4v
+2 
+ [c
+s.C
+C]
+  2
+1 D
+ec
+ 20
+19
+Forward
+This monograph is based on lecture notes from my mini-course “Complexity Theory, Game Theory, and
+Economics,” taught at the Bellairs Research Institute of McGill University, Holetown, Barbados, February
+19–23, 2017, as the 29th McGill Invitational Workshop on Computational Complexity.
+The goal of this mini-course is twofold:
+(i) to explain how complexity theory has helped illuminate several barriers in economics and game theory;
+and
+(ii) to illustrate how game-theoretic questions have led to new and interesting complexity theory, including
+several very recent breakthroughs.
+It consists of two five-lecture sequences: the Solar Lectures, focusing on the communication and computa-
+tional complexity of computing equilibria; and the Lunar Lectures, focusing on applications of complexity
+theory in game theory and economics.∗ No background in game theory is assumed.
+Thanks are due to many people: Denis Therien and Anil Ada for organizing the workshop and for
+inviting me to lecture; Omri Weinstein, for giving a guest lecture on simulation theorems in communication
+complexity; Alex Russell, for coordinating the scribe notes; the scribes†, for putting together a terrific first
+draft; and all of the workshop attendees, for making the experience so unforgettable (if intense!). I also thank
+Yakov Babichenko, Mika Göös, Aviad Rubinstein, Eylon Yogev, and an anonymous reviewer for numerous
+helpful comments on earlier drafts of this monograph.
+The writing of this monograph was supported in part by NSF award CCF-1524062, a Google Faculty
+Research Award, and a Guggenheim Fellowship. I would be very happy to receive any comments or
+corrections from readers.
+Tim Roughgarden
+Bracciano, Italy
+December 2017
+(Revised December 2019)
+∗Cris Moore: “So when are the stellar lectures?”
+†Anil Ada, Amey Bhangale, Shant Boodaghians, Sumegha Garg, Valentine Kabanets, Antonina Kolokolova, Michal Koucký,
+Cristopher Moore, Pavel Pudlák, Dana Randall, Jacobo Torán, Salil Vadhan, Joshua R. Wang, and Omri Weinstein.
+2
+Contents
+Forward . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+I Solar Lectures 7
+1 Introduction, Wish List, and Two-Player Zero-Sum Games 8
+1.1 Nash Equilibria in Two-Player Zero-Sum Games . . . . . . . . . . . . . . . . . . . . . . . . 8
+1.2 Uncoupled Dynamics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+1.3 General Bimatrix Games . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.4 Approximate Nash Equilibria in Bimatrix Games . . . . . . . . . . . . . . . . . . . . . . . 20
+2 Communication Complexity Lower Bound for Computing an Approximate Nash Equilibrium
+of a Bimatrix Game (Part I) 23
+2.1 Preamble . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.2 Naive Approach: Reduction From Disjointness . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.3 Finding Brouwer Fixed Points (The -BFP Problem) . . . . . . . . . . . . . . . . . . . . . 25
+2.4 The End-of-the-Line (EoL) Problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.5 Road Map for the Proof of Theorem 2.1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.6 Step 1: Query Lower Bound for EoL . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+2.7 Step 2: Communication Complexity Lower Bound for 2EoL via a Simulation Theorem . . . 32
+3 Communication Complexity Lower Bound for Computing an Approximate Nash Equilibrium
+of a Bimatrix Game (Part II) 35
+3.1 Step 3: 2EoL ≤ -2BFP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+3.2 Step 4: -2BFP ≤ -NE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+4 TFNP, PPAD, & All That 45
+4.1 Preamble . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+4.2 TFNP and Its Subclasses . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+4.3 PPAD and Its Complete Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+4.4 Are TFNP Problems Hard? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
+5 The Computational Complexity of Computing an Approximate Nash Equilibrium 55
+5.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+5.2 Proof of Theorem 5.1: An Impressionistic Treatment . . . . . . . . . . . . . . . . . . . . . 56
+3
+II Lunar Lectures 63
+1 How Computer Science Has Influenced Real-World Auction Design.
+Case Study: The 2016–2017 FCC Incentive Auction 64
+1.1 Preamble . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+1.2 Reverse Auction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+1.3 Forward Auction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+2 Communication Barriers to Near-Optimal Equilibria 71
+2.1 Welfare Maximization in Combinatorial Auctions . . . . . . . . . . . . . . . . . . . . . . . 71
+2.2 Communication Lower Bounds for Approximate Welfare Maximization . . . . . . . . . . . 72
+2.3 Lower Bounds on the Price of Anarchy of Simple Auctions . . . . . . . . . . . . . . . . . . 75
+2.4 An Open Question . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 79
+2.5 Appendix: Proof of Theorem 2.2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+3 Why Prices Need Algorithms 81
+3.1 Markets with Indivisible Items . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+3.2 Complexity Separations Imply Non-Existence of Walrasian Equilibria . . . . . . . . . . . . 84
+3.3 Proof of Theorem 3.5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 85
+3.4 Beyond Walrasian Equilibria . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 87
+4 The Borders of Border’s Theorem 89
+4.1 Optimal Single-Item Auctions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 89
+4.2 Border’s Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 91
+4.3 Beyond Single-Item Auctions: A Complexity-Theoretic Barrier . . . . . . . . . . . . . . . . 96
+4.4 Appendix: A Combinatorial Proof of Border’s Theorem . . . . . . . . . . . . . . . . . . . 99
+5 Tractable Relaxations of Nash Equilibria 101
+5.1 Preamble . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 101
+5.2 Uncoupled Dynamics Revisited . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 101
+5.3 Correlated and Coarse Correlated Equilibria . . . . . . . . . . . . . . . . . . . . . . . . . . 103
+5.4 Computing an Exact Correlated or Coarse Correlated Equilibrium . . . . . . . . . . . . . . 104
+5.5 The Price of Anarchy of Coarse Correlated Equilibria . . . . . . . . . . . . . . . . . . . . . 107
+Bibliography 109
+4
+Overview
+There are 5 solar lectures and 5 lunar lectures. The solar lectures focus on the communication and
+computational complexity of computing an (approximate) Nash equilibrium. The lunar lectures are less
+technically intense and meant to be understandable even after consuming a rum punch; they focus on
+applications of computational complexity theory to game theory and economics.
+The Solar Lectures: Complexity of Equilibria
+Lecture 1: Introduction and wish list. The goal of the first lecture is to get the lay of the land. We’ll focus
+on the types of positive results about equilibria that we want, like fast algorithms and quickly converging
+distributed processes. Such positive results are possible in special cases (like zero-sum games), and the
+challenge for complexity theory is to prove that they cannot be extended to the general case. The topics in
+this lecture are mostly classical.
+Lectures 2 and 3: The communication complexity of Nash equilibria. These two lectures cover themain
+ideas in the recent paper of Babichenko and Rubinstein [9], which proves strong communication complexity
+lower bounds for computing an approximate Nash equilibrium. Discussing the proof also gives us an excuse
+to talk about “simulation theorems” in the spirit of Raz and McKenzie [126], which lift query complexity
+lower bounds to communication complexity lower bounds and have recently found a number of exciting
+applications.
+Lecture 4: TFNP, PPAD, and all that. In this lecture we begin our study of the computational complexity
+of computing a Nash equilibrium, where we want conditional but super-polynomial lower bounds. Proving
+analogs of NP-completeness results requires developing customized complexity classes appropriate for the
+study of equilibrium computation.∗ This lecture also discusses the existing evidence for the intractability of
+these complexity classes, including some very recent developments.
+Lecture 5: The computational complexity of computing an approximate Nash equilibrium of a bima-
+trix game. The goal of this lecture is to give a high-level overview of Rubinstein’s recent breakthrough
+result [142] that an ETH-type assumption for PPAD implies a quasi-polynomial-time lower bound for the
+problem of computing an approximate Nash equilibrium (which is tight, by Corollary 1.17).
+The Lunar Lectures: Complexity-Theoretic Barriers in Economics
+Most of the lunar lectures have the flavor of “applied complexity theory.”† While the solar lectures build on
+each other to some extent, the lunar lectures are episodic and can be read independently of each other.
+∗Why can’t we use the tried-and-true theory of NP-completeness? Because the guaranteed existence (Theorem 1.14) and
+efficient verifiability of a Nash equilibrium imply that computing one is an easier task than solving an NP-complete problems, under
+appropriate complexity assumptions (see Theorem 4.1).
+†Not an oxymoron!
+5
+Lecture 1: The 2016 FCC Incentive Auction. The recent FCC Incentive Auction is a great case study
+of how computer science has influenced real-world auction design. This lecture provides our first broader
+glimpse of the vibrant field called algorithmic game theory, at most 10% of which concerns the complexity
+of computing equilibria.
+Lecture 2: Barriers to near-optimal equilibria. This lecture concerns the “price of anarchy,” meaning
+the extent to which the Nash equilibria of a game approximate an optimal outcome. It turns out that
+nondeterministic communication complexity lower bounds can be translated, in black-box fashion, to lower
+bounds on the price of anarchy. We’ll see how this translation enables a theory of “optimal simple auctions.”
+Lecture 3: Barriers in markets. You’ve surely heard of the idea of “market-clearing prices,” which are
+prices in a market such that supply equals demand. When the goods are divisible (milk, wheat, etc.), market-
+clearing prices exist under relatively mild technical assumptions. With indivisible goods (houses, spectrum
+licenses, etc.), market-clearing prices may or may not exist. It turns out that complexity considerations can
+be used to explain when such prices exist and when they do not. This is cool and surprising because the issue
+of equilibrium existence seems to have nothing to do with computation (in contrast to the Solar Lectures,
+where the questions studied are explicitly about computation).
+Lecture 4: The borders of Border’s theorem. Border’s theorem is a famous result in auction theory
+from 1991, about single-item auctions. Despite its fame, no one has been able to extend it to significantly
+more general settings. We’ll see that complexity theory explains this mystery: significantly generalizing
+Border’s theorem would imply that the polynomial hierarchy collapses!
+Lecture 5: Tractable relaxations of Nash equilibria. With the other lectures focused largely on negative
+results for computing Nash equilibria, for an epilogue we’ll conclude with positive algorithmic results for
+relaxations of Nash equilibria, such as correlated equilibria.
+6
+Part I
+Solar Lectures
+7
+Solar Lecture 1
+Introduction, Wish List, and Two-Player Zero-Sum Games
+1.1 Nash Equilibria in Two-Player Zero-Sum Games
+1.1.1 Preamble
+To an algorithms person (like the author), complexity theory is the science of why you can’t get what you
+want. So what is it we want? Let’s start with some cool positive results for a very special class of games—
+two-player zero-sum games—and then we can study whether or not they extend to more general games. For
+the first positive result, we’ll review the famous Minimax theorem, and see how it leads to a polynomial-time
+algorithm for computing a Nash equilibrium of a two-player zero-sum game. Then we’ll show that there
+are natural “dynamics” (basically, a distributed algorithm) that converge rapidly to an approximate Nash
+equilibrium.
+1.1.2 Rock-Paper-Scissors
+Recall the game of rock-paper-scissors (or roshambo, if you like)1: there are two players, each simultaneously
+picks a strategy from {rock, paper, scissors}. If both players choose the same strategy then the game is a
+draw; otherwise, rock beats scissors, scissors beats paper, and paper beats rock.2
+Here’s an idea: how about we play rock-paper-scissors, and you go first? This is clearly unfair—no
+matter what strategy you choose, I have a response that guarantees victory. But what if you only have to
+commit to a probability distribution over your three strategies (called a mixed strategy)? To be clear, the
+order of operations is: (i) you pick a distribution; (ii) I pick a response; (iii) nature flips coins to sample a
+strategy from your distribution. Now you can protect yourself—by picking a strategy uniformly at random,
+no matter what I do, you have an equal chance of a win, a loss, or a draw.
+TheMinimax theorem states that, in any game of “pure competition” like rock-paper-scissors, a player can
+always protect herself with a suitable randomized strategy—there is no disadvantage of having to move first.
+The proof of the Minimax theorem also gives as a byproduct a polynomial-time algorithm for computing a
+Nash equilibrium (by linear programming).
+1https://en.wikipedia.org/wiki/Rock-paper-scissors
+2Here are some fun facts about rock-paper-scissors. There’s a World Series of RPS every year, with a top prize of at least $50K.
+If you watch some videos from the event, you will see pure psychological warfare. Maybe this explains why some of the same
+players seem to end up in the later rounds of the tournament every year.
+There’s also a robot hand, built at the University of Tokyo, that plays rock-paper-scissors with a winning probability of 100%
+(check out the video). No surprise, a very high-speed camera is involved.
+8
+1.1.3 Formalism
+We specify a two-player zero-sum game with an m × n payoff matrix A of numbers. The rows correspond to
+the possible choices of Alice (the “row player”) and the columns correspond to possible choices for Bob (the
+“column player”). Entry Ai j contains Alice’s payoff when Alice chooses row i and Bob chooses column j.
+In a zero-sum game, Bob’s corresponding payoff is automatically defined to be −Ai j . Throughout the solar
+lectures, we normalize the payoff matrix so that |Ai j | ≤ 1 for all i and j.3
+For example, the payoff matrix corresponding to rock-paper-scissors is:
+R P S
+R 0 -1 1
+P 1 0 -1
+S -1 1 0
+Mixed strategies for Alice and Bob correspond to probability distributions x and y over rows and columns,
+respectively.4
+When speaking about Nash equilibria, one always assumes that players randomize independently. For a
+two-player zero-sum game A and mixed strategies x, y, we can write Alice’s expected payoff as
+x>Ay =
+∑
+i, j
+Ai j xiyj .
+Bob’s expected payoff is the negative of this quantity, so his goal is to minimize the expression above.
+1.1.4 The Minimax Theorem
+The question that the Minimax theorem addresses is the following:
+If two players make choices sequentially in a zero-sum game, is it better to go first or second?
+In a zero-sum game, there can only be a first-mover disadvantage. Going second gives a player the opportunity
+to adapt to what the other player does first. And the second player always has the option of choosing whatever
+mixed strategy she would have chosen had she gone first. But does going second ever strictly help? The
+Minimax theorem gives an amazing answer to the question above: it doesn’t matter!
+Theorem 1.1 (Minimax Theorem). Let A be the payoff matrix of a two-player zero-sum game. Then
+max
+x
+(
+min
+y
+x>Ay
+)
+= min
+y
+(
+max
+x
+x>Ay
+)
+, (1.1)
+where x and y range over probability distributions over the rows and columns of A, respectively.
+On the left-hand side of (1.1), the row player moves first and the column player second. The column
+player plays optimally given the strategy chosen by the row player, and the row player plays optimally
+anticipating the column player’s response. On the right-hand side of (1.1), the roles of the two players are
+reversed. The Minimax theorem asserts that, under optimal play, the expected payoff of each player is the
+same in both scenarios.
+3This is without loss of generality, by scaling.
+4A pure strategy is the special case of a mixed strategy that is deterministic (i.e., allots all its probability to a single strategy).
+9
+The first proof of the Minimax theorem was due to von Neumann [156] and used fixed-point-type
+arguments (which we’ll have much more to say about later). von Neumann and Morgenstern [157], inspired
+by Ville [155], later realized that the Minimax theorem can be deduced from strong linear programming
+duality.5
+Proof. The idea is to formulate the problem faced by the first player as a linear program. The theorem will
+then follow from linear programming duality.
+First, the player who moves second always has an optimal pure (i.e., deterministic) strategy—given the
+probability distribution chosen by the first player, the second player can simply play the strategy with the
+highest expected payoff. This means the inner min and max in (1.1) may as well range over columns and
+rows, respectively, rather than over all probability distributions. The expression in the left-hand side of (1.1)
+then translates to the following linear program:
+max
+x,v
+v
+s.t. v ≤
+m∑
+i=1
+Ai j xi for all columns j,
+x is a probability distribution over rows.
+If the optimal point is (v∗, x∗), then v∗ equals the left-hand-side of (1.1) and x∗ belongs to the corresponding
+arg-max. In plain terms, x∗ is what Alice should play if she has to move first, and v∗ is the consequent
+expected payoff (assuming Bob responds optimally).
+Similarly, we can write a second linear program that computes the optimal point (w∗, y∗) from Bob’s
+perspective, where w∗ equals the right-hand-side of (1.1) and y∗ is in the corresponding arg-min:
+min
+y,w
+w
+s.t. w ≥
+n∑
+j=1
+Ai j yj for all rows i,
+y is a probability distribution over columns.
+It is straightforward to verify that these two linear programs are in fact duals of each other (left to the
+reader, or see Chvátal [39]). By strong linear programming duality, we know that the two linear programs
+have equal optimal objective function value and hence v∗ = w∗. This means that the payoff that Alice can
+guarantee herself when she goes first is the same as when Bob goes first (and plays optimally), completing
+the proof. 
+5Dantzig [42, p.5] describes meeting John von Neumann on October 3, 1947: “In under a minute I slapped the geometric and
+the algebraic version of the [linear programming] problem on the blackboard. Von Neumann stood up and said ‘Oh that!’ Then for
+the next hour and a half, he proceeded to give me a lecture on the mathematical theory of linear programs.
+“At one point seeing me sitting there with my eyes popping and my mouth open (after all I had searched the literature and found
+nothing), von Neumann said: ‘I don’t want you to think I am pulling all this out of my sleeve on the spur of the moment like a
+magician. I have just recently completed a book with Oskar Morgenstern on the Theory of Games. What I am doing is conjecturing
+that the two problems are equivalent.”
+This equivalence between strong linear programming duality and the Minimax theorem is made precise in Dantzig [41], Gale et
+al. [60], and Adler [2].
+10
+Definition 1.2 (Values and Min-Max Pairs). Let A be the payoff matrix of a two-player zero-sum game. The
+value of the game is defined as the common value of
+max
+x
+(
+min
+y
+x>Ay
+)
+and min
+y
+(
+max
+x
+x>Ay
+)
+.
+A min-max strategy is a strategy x∗ in the arg-max of the left-hand side or a strategy y∗ in the arg-min of the
+right-hand side. A min-max pair is a pair (x∗, y∗) where x∗ and y∗ are both min-max strategies.
+For example, the value of the rock-paper-scissors game is 0 and (u, u) is its unique min-max pair, where u
+denotes the uniform probability distribution.
+The min-max pairs are the optimal solutions of the two linear programs in the proof of Theorem 1.1.
+Because the optimal solution of a linear program can be computed in polynomial time, so can a min-max
+pair.
+1.1.5 Nash Equilibrium
+In zero-sum games, a min-max pair is closely related to the notion of a Nash equilibrium, defined next.6
+Definition 1.3 (Nash Equilibrium in a Two-Player Zero-Sum Game). Let A be the payoff matrix of a
+two-player zero-sum game. The pair (xˆ, yˆ) is a Nash equilibrium if:
+(i) xˆ>Ayˆ ≥ x>Ayˆ for all x (given that Bob plays yˆ, Alice cannot increase her expected payoff by deviating
+unilaterally to a strategy different from xˆ, i.e., xˆ is optimal given yˆ);
+(ii) xˆ>Ayˆ ≤ xˆ>Ay for all y (given xˆ, yˆ is an optimal strategy for Bob).
+The pairs in Definition 1.3 are sometimes called mixed Nash equilibria, to stress that players are allowed
+to randomize. (As opposed to a pure Nash equilibrium, where both players play deterministically.) Unless
+otherwise noted, we will always be concerned with mixed Nash equilibria.
+Proposition 1.4 (Equivalence of Nash Equilibria and Min-Max Pairs). In a two-player zero-sum game, a
+pair (x∗, y∗) is a min-max pair if and only if it is a Nash equilibrium.
+Proof. Suppose (x∗, y∗) is a min-max pair, and so Alice’s expected payoff is v∗, the value of the game.
+Because Alice plays her min-max strategy, Bob cannot make her payoff smaller than v∗ via some other
+strategy. Because Bob plays his min-max strategy, Alice cannot make her payoff larger than v∗. Neither
+player can do better with a unilateral deviation, and so (x∗, y∗) is a Nash equilibrium.
+Conversely, suppose (x∗, y∗) is not a min-max pair with, say, Alice not playing a min-max strategy. If
+Alice’s expected payoff is less than v∗, then (x∗, y∗) is not a Nash equilibrium (she could do better by deviating
+to a min-max strategy). Otherwise, because x∗ is not a min-max strategy, Bob has a response y such that
+Alice’s expected payoff would be strictly less than v∗. Here, Bob could do better by deviating unilaterally to
+y. In any case, (x∗, y∗) is not a Nash equilibrium. 
+There are several interesting consequences of Theorem 1.1 and Proposition 1.4:
+1. The set of all Nash equilibria of a two-player zero-sum game is convex, as the optimal solutions of a
+linear program form a convex set.
+6If you think you learned this definition from the movie A Beautiful Mind, it’s time to learn the correct definition!
+11
+2. All Nash equilibria (x, y) of a two-player zero-sum game lead to the same value of x>Ay. That is,
+each player receives the same expected payoff across all Nash equilibria.
+3. Most importantly, because the proof of Theorem 1.1 provides a polynomial-time algorithm to compute
+a min-max pair (x∗, y∗), we have a polynomial-time algorithm to compute a Nash equilibrium of a
+two-player zero-sum game.
+Corollary 1.5. A Nash equilibrium of a two-player zero-sum game can be computed in polynomial time.
+1.1.6 Beyond Zero-Sum Games (Computational Complexity)
+Can we generalize Corollary 1.5 to more general classes of games? After all, while two-player zero-sum
+games are important—von Neumann was largely focused on them, with applications ranging from poker to
+war—most game-theoretic situations are not purely zero-sum.7 For example, what about bimatrix games,
+in which there are still two players but the game is not necessarily zero-sum?8 Solar Lectures 4 and 5 are
+devoted to this question, and provide evidence that there is no polynomial-time algorithm for computing a
+Nash equilibrium (even an approximate one) of a bimatrix game.
+1.1.7 Who Cares?
+Before proceeding to our second cool fact about two-player zero-sum games, let’s take a step back and be
+clear about what we’re trying to accomplish. Why do we care about computing equilibria of games, anyway?
+1. We might want fast algorithms to use in practice. The demand for equilibrium computation algorithms
+is significantly less than that for, say, linear programming solvers, but the author regularly meets
+researchers who would make good use of better off-the-shelf solvers for computing an equilibrium of
+a game.
+2. Perhaps most relevant for this monograph’s audience, the study of equilibrium computation naturally
+leads to interesting and new complexity theory (e.g., definitions of new complexity classes, such as
+PPAD). We will see that the most celebrated results in the area are quite deep and draw on ideas from
+all across theoretical computer science.
+3. Complexity considerations can be used to support or critique the practical relevance of an equilibrium
+concept such as the Nash equilibrium. It is tempting to interpret a polynomial-time algorithm for
+computing an equilibrium as a plausibility argument that players can figure one out quickly, and an
+intractability result as evidence that players will not generally reach an equilibrium in a reasonable
+amount of time.
+Of course, the real story is more complex. First, computational intractability is not necessarily first
+on the list of the Nash equilibrium’s issues. For example, its non-uniqueness in non-zero-sum games
+already limits its predictive power.9
+7Games can even have a collaborative aspect, for example if you and I want to meet at some intersection in Manhattan. Our
+strategies are intersections, and either we both get a high payoff (if we choose the same strategy) or we both get a low payoff
+(otherwise).
+8Notice that three-player zero-sum games are already more general than bimatrix games—to turn one of the latter into one of
+the former, add a dummy third player with only one strategy whose payoff is the negative of the combined payoff of the original two
+players. Thus the most compelling negative results would be for the case of bimatrix games.
+9Recall our “meeting in Manhattan” example—every intersection is a Nash equilibrium!
+12
+Second, it’s not particularly helpful to critique a definition without suggesting an alternative. Lunar
+Lecture 5 partially addresses this issue by discussing two tractable equilibrium concepts, correlated
+equilibria and coarse correlated equilibria.
+Third, does an arbitrary polynomial-time algorithm, such as one based on solving a non-trivial
+linear program, really suggest that independent play by strategic players will actually converge to
+an equilibrium? Algorithms for linear programming do not resemble how players typically make
+decisions in games. A stronger positive result would involve a behaviorally plausible distributed
+algorithm that players can use to efficiently converge to a Nash equilibrium through repeated play over
+time. We discuss such a result for two-player zero-sum games next.
+1.2 Uncoupled Dynamics
+In the first half of the lecture, we saw that a Nash equilibrium of a two-player zero-sum game can be computed
+in polynomial time using linear programming. It would be more compelling, however, to come up with a
+definition of a plausible process by which players can learn a Nash equilibrium. Such a result requires a
+behavioral model for what players do when not at equilibrium. The goal is then to investigate whether or
+not the process converges to a Nash equilibrium (for an appropriate notion of convergence), and if so, how
+quickly.
+1.2.1 The Setup
+Uncoupled dynamics refers to a class of processes with the properties mentioned above. The idea is that
+each player initially knows only her own payoffs (and not those of the other players), à la the number-in-hand
+model in communication complexity.10 The game is then played repeatedly, with each player picking a
+strategy in each time step as a function only of her own payoffs and what transpired in the past.
+Uncoupled Dynamics (Two-Player Version)
+At each time step t = 1, 2, 3, . . .:
+1. Alice chooses a strategy xt as a function only of her own payoffs and the previously chosen
+strategies x1, . . . , xt−1 and y1, . . . , yt−1.
+2. Bob simultaneously chooses a strategy yt as a function only of his own payoffs and the previously
+chosen strategies x1, . . . , xt−1 and y1, . . . , yt−1.
+3. Alice learns yt and Bob learns xt .11
+Uncoupled dynamics have been studied at length in both the game theory and computer science literatures
+(often under different names). Specifying such dynamics boils down to a definition of how Alice and Bob
+10If a player knows the game is zero-sum and also her own payoff matrix, then she automatically knows the other player’s
+payoff matrix. Nonetheless, it is non-trivial and illuminating to investigate the convergence properties of general-purpose uncoupled
+dynamics in the zero-sum case, thereby identifying an aspiration point for the analysis of general games.
+11When Alice and Bob use mixed strategies, there are two natural feedback models, one where each player learns the actual
+mixed strategy chosen by the other player, and one where each learns only a sample (a pure strategy) from the other player’s chosen
+distribution. It’s generally easier to prove results in the first model, but such proofs usually can be extended with some additional
+work to hold (with high probability over the strategy realizations) in the second model as well.
+13
+choose strategies as a function of their payoffs and the joint history of play. Let’s look at some famous
+examples.
+1.2.2 Fictitious Play
+One natural idea is to best respond to the observed behavior of your opponent.
+Example 1.6 (Fictitious Play). In fictitious play, each player assumes that the other player will mix according
+to the relative frequencies of their past actions (i.e., the empirical distribution of their past play), and plays a
+best response.12
+Fictitious Play (Two-Player Version)
+At each time step t = 1, 2, 3, . . .:
+1. Alice chooses a strategy xt that is a best response against yˆt−1 = 1t−1
+∑t−1
+s=1 y
+s, the past actions of
+Bob (breaking ties arbitrarily).
+2. Bob simultaneously chooses a strategy yt that is a best response against xˆt−1 = 1t−1
+∑t−1
+s=1 x
+s, the
+past actions of Alice (breaking ties arbitrarily).
+3. Alice learns yt and Bob learns xt .
+Note that each player picks a pure strategy in each time step (modulo tie-breaking in the case of multiple best
+responses). One way to interpret fictitious play is to imagine that each player assumes that the other is using
+the same mixed strategy every time step, and estimates this time-invariant mixed strategy with the empirical
+distribution of the strategies chosen in the past.
+Fictitious play has an interesting history:
+1. It was first proposed by G. W. Brown in 1949 (published in 1951 [20]) as a computer algorithm to
+compute a Nash equilibrium of a two-player zero-sum game. This is not so long after the birth of
+either game theory or computers!
+2. In 1951, Julia Robinson (better known for her contributions to the resolution of Hilbert’s tenth problem
+about Diophantine equations) proved that, in two-player zero-sum games, the time-averaged payoffs of
+the players converge to the value of the game [129]. Robinson’s proof gives only an exponential (in the
+number of strategies) bound on the number of iterations required for convergence. In 1959, Karlin [89]
+conjectured that a polynomial bound should be possible (for two-player zero-sum games). Fast forward
+to 2014, and Daskalakis and Pan [43] refuted Karlin’s conjecture and proved an exponential lower
+bound for the case of adversarial (and not necessarily consistent) tie-breaking.
+3. It is still an open question whether or not fictitious play converges quickly in two-player zero-sum
+games for natural (or even just consistent) tie-breaking rules! The goal here would be to show that
+poly(n, 1/) time steps suffice for the time-averaged payoffs to be within  of the value of the game
+(where n is the total number of rows and columns).
+12In the first time step, Alice and Bob both choose a default strategy, such as the uniform distribution.
+14
+4. The situation for non-zero-sum games was murky until 1964, when Lloyd Shapley discovered a 3 × 3
+game (a non-zero-sum variation on rock-paper-scissors) where fictitious play never converges to a Nash
+equilibrium [145]. Shapley’s counterexample foreshadowed future separations between the tractability
+of zero-sum and non-zero-sum games.
+Next we’ll look at a different choice of dynamics with better convergence properties.
+1.2.3 Smooth Fictitious Play
+Fictitious play is “all-or-nothing”—even if two strategies have almost the same expected payoff against the
+opponent’s empirical distribution, the slightly worse one is completely ignored in favor of the slightly better
+one. A more stable approach, and perhaps a more behaviorally plausible one, is to assume that players
+randomize, biasing their decision toward the strategies with the highest expected payoffs (again, against the
+empirical distribution of the opponent). In other words, each player plays a “noisy best response” against the
+observed play of the other player.
+For example, already in 1957 Hannan [75] considered dynamics where each player chooses a strategy
+with probability proportional to her expected payoff (against the empirical distribution of the other player’s
+past play), and proved polynomial convergence to the Nash equilibrium payoffs in two-player zero-sum
+games. Even better convergence properties are possible if poorly performing strategies are abandoned more
+aggressively, corresponding to a “softmax” version of fictitious play.
+Example 1.7 (Smooth Fictitious Play). In time t of smooth fictitious play, a player (Alice, say) computes
+the empirical distribution yˆt−1 =
+∑t−1
+s=1 y
+s of the other player’s past play, computes the expected payoff piti
+of each pure strategy i under the assumption that Bob plays yˆt−1, and chooses xt by playing each strategy
+with probability proportional to eηtpi ti . (When t = 1, interpret the piti ’s as 0 and hence the player chooses the
+uniform distribution.) Here ηt is a tunable parameter that interpolates between always playing uniformly at
+random (when η = 0) and fictitious play with random tie-breaking (when η = +∞). The choice ηt ≈ √t is
+often the best one for proving convergence results.
+Smooth Fictitious Play (Two-Player Version)
+Given: parameter family {ηt ∈ [0,∞) : t = 1, 2, 3, . . .}.
+At each time step t = 1, 2, 3, . . .:
+1. Alice chooses a strategy xt by playing each strategy i with probability proportional to eηtpi ti ,
+where piti denotes the expected payoff of strategy i when Bob plays the mixed strategy yˆ
+t−1 =
+1
+t−1
+∑t−1
+s=1 y
+s.
+2. Bob simultaneously chooses a strategy yt by playing each strategy j with probability proportional
+to eη
+tpi tj , where pitj is the expected payoff of strategy j when Alice plays the mixed strategy
+xˆt−1 = 1t−1
+∑t−1
+s=1 x
+s.
+3. Alice learns yt and Bob learns xt .
+Versions of smooth fictitious play have been studied independently in the game theory literature (beginning
+with Fudenberg and Levine [59]) and the computer science literature (beginning with Freund and Schapire
+[58]). It converges extremely quickly.
+15
+Theorem 1.8 (Fast Convergence of Smooth Fictitious Play [59, 58]). For a zero-sum two-player game with
+m rows and n columns and a parameter  > 0, after T = O(log(n + m)/2) time steps of smooth fictitious
+play with ηt = Θ(√t) for each t, the empirical distributions xˆ = 1T
+∑T
+t=1 x
+t and yˆ = 1T
+∑T
+t=1 y
+t constitute an
+-approximate Nash equilibrium.
+The -approximate Nash equilibrium condition in Theorem 1.8 is exactly what it sounds like: neither
+player can improve their expected payoff by more than  via a unilateral deviation (see also Definition 1.12,
+below).13
+There are two steps in the proof of Theorem 1.8: (i) the noisy best response in smooth fictitious play is
+equivalent to the “Exponential Weights” algorithm, which has “vanishing regret”; and (ii) in a two-player
+zero-sum game, vanishing-regret guarantees translate to (approximate) Nash equilibrium convergence. The
+optional Sections 1.2.5–1.2.7 provide more details for the interested reader.
+1.2.4 Beyond Zero-Sum Games (Communication Complexity)
+Theorem 1.8 implies that smooth fictitious play can be used to define a randomized O(log2(n + m)/2)-
+bit communication protocol for computing an -NE of a two-player zero sum game.14 The goal of Solar
+Lectures 2 and 3 is to prove that there is no analogously efficient communication protocol for computing an
+approximate Nash equilibrium of a general bimatrix game.15 Ruling out low-communication protocols will
+in particular rule out any type of quickly converging uncoupled dynamics.16
+1.2.5 Proof of Theorem 1.8, Part 1: Exponential Weights (Optional)
+To elaborate on the first step of the proof of Theorem 1.8, we need to explain the standard setup for online
+decision-making.
+Online Decision-Making
+At each time step t = 1, 2, . . . ,T :
+a decision-maker picks a probability distribution pt over her actions Λ
+an adversary picks a reward vector r t : Λ→ [−1, 1]
+an action at is chosen according to the distribution pt , and the decision-maker receives
+reward r t (at )
+the decision-maker learns r t , the entire reward vector
+In smooth fictitious play, each of Alice and Bob are in effect solving the online decision-making problem
+(with actions corresponding to the game’s strategies). For Alice, the reward vector r t is induced by Bob’s
+13Recall our assumption that payoffs have been scaled to lie in [−1, 1].
+14This communication bound applies to the variant of smooth fictitious play where Alice (respectively, Bob) learns only a random
+sample from yt (respectively, xt ); see footnote 11. Each such sample can be communicated to the other player in log(n + m) bits.
+Theorem 1.8 continues to hold (with high probability over the samples) for this variant of smooth fictitious play [59, 58].
+15The communication complexity of computing anything about a two-player zero-sum game is zero—Alice knows the entire
+game at the beginning (as Bob’s payoff is the negative of hers) and can unilaterally compute whatever she wants. But it still makes
+sense to ask if the communication bound implied by smooth fictitious play can be replicated in non-zero-games (where Alice and
+Bob initially know only their own payoff matrices).
+16The relevance of communication complexity to fast learning in games was first pointed out by Conitzer and Sandholm [40].
+16
+action at time step t (if Bob plays strategy j, then r t is the jth column of the game matrix A), and similarly
+for Bob (with reward vector equal to the ith row multiplied by −1). Next we interpret Alice’s and Bob’s
+behavior in smooth fictitious play as algorithms for online decision-making.
+An online decision-making algorithm specifies for each t the probability distribution pt , as a function of
+the reward vectors r1, . . . , r t−1 and realized actions a1, . . . , at−1 of the first t − 1 time steps. An adversary for
+such an algorithm A specifies for each t the reward vector r t , as a function of the probability distributions
+p1, . . . , pt used by A on the first t days and the realized actions a1, . . . , at−1 of the first t − 1 days.
+Here is a famous online decision-making algorithm, the “ExponentialWeights (EW)” algorithm (see [105,
+57]).17
+Exponential Weights (EW) Algorithm
+initialize w1(a) = 1 for every a ∈ Λ
+for each time step t = 1, 2, 3, . . . do
+use the distribution pt := wt/Γt over actions, where Γt = ∑a∈Λ wt (a) is the sum of the
+actions’ current weights
+given the reward vector r t , update the weight of each action a ∈ Λ using the formula
+wt+1(a) = wt (a) · (eηtr t (a)) (where ηt is a parameter, canonically ≈ √t)
+The EW algorithm maintains a weight, intuitively a “credibility,” for each action. At each time step the
+algorithm chooses an action with probability proportional to its current weight. The weight of each action
+evolves over time according to the action’s past performance.
+Inspecting the descriptions of smooth fictitious play and the EW algorithm, we see that we can rephrase
+the former as follows:
+Smooth Fictitious Play (Rephrased)
+Given: parameter family {ηt ∈ [0,∞) : t = 1, 2, 3, . . .}.
+At each time step t = 1, 2, 3, . . .:
+1. Alice uses an instantiation of the EW algorithm to choose a mixed strategy xt .
+2. Bob uses a different instantiation of the EW algorithm to choose a mixed strategy yt .
+3. Alice learns yt and Bob learns xt .
+4. Alice feeds her EW algorithm a reward vector r t with r t (i) equal to the expected payoff of playing
+row i, given Bob’s mixed strategy yt over columns; and similarly for Bob.
+How should we assess the performance of an online decision-making algorithm like the EW algorithm,
+and do guarantees for the algorithm have any implications for smooth fictitious play?
+17Also known as the “Hedge” algorithm. The closely related “Multiplicative Weights” algorithm uses the update rule wt+1(a) =
+wt (a) · (1 + ηtr t (a)) instead of wt+1(a) = wt (a) · (eηt r t (a)) [27].
+17
+1.2.6 Proof of Theorem 1.8, Part 2: Vanishing Regret (Optional)
+One of the big ideas in online learning is to compare the time-averaged reward earned by an online algorithm
+with that earned by the best fixed action in hindsight.18
+Definition 1.9 ((Time-Averaged) Regret). Fix reward vectors r1, . . . , rT . The regret of the action sequence
+a1, . . . , aT is
+1
+T
+max
+a∈Λ
+T∑
+t=1
+r t (a)︸              ︷︷              ︸
+best fixed action
+− 1
+T
+T∑
+t=1
+r t (at )︸        ︷︷        ︸
+our algorithm
+. (1.2)
+Note that, by linearity, there is no difference between considering the best fixed action and the best fixed
+distribution over actions (there is always an optimal pure action in hindsight).
+We aspire to an online decision-making algorithm that achieves low regret, as close to 0 as possible.
+Because rewards lie in [−1, 1], the regret can never be larger than 2. We think of regret Ω(1) (as T →∞) as
+an epic fail for an algorithm.
+It turns out that the EW algorithm has the best-possible worst-case regret guarantee (up to constant
+factors).19
+Theorem 1.10 (Regret Bound for the EW Algorithm). For every adversary, the EW algorithm has expected
+regret O(√(log n)/T), where n = |Λ|.
+See e.g. the book of Cesa-Bianchi and Lugosi [26] for a proof of Theorem 1.10, which is not overly
+difficult.
+An immediate corollary is that the number of time steps needed to drive the expected regret down to a
+small constant is only logarithmic in the number of actions—this is surprisingly fast!
+Corollary 1.11. There is an online decision-making algorithm that, for every adversary and  > 0, has
+expected regret at most  after O((log n)/2) time steps, where n = |Λ|.
+1.2.7 Proof of Theorem 1.8, Part 3: Vanishing Regret Implies Convergence (Optional)
+Consider a zero-sum game A with payoffs in [−1, 1] and some  > 0. Let n denote the number of rows or
+the number of columns, whichever is larger, and set T = Θ((log n)/2) so that the guarantee in Corollary
+1.11 holds with error /2. Let x1, . . . , xT and y1, . . . , yT be the mixed strategies used by Alice and Bob
+throughout T steps of smooth fictitious play. Let xˆ = 1T
+∑T
+t=1 x
+t and yˆ = 1T
+∑T
+t=1 y
+t denote the time-averaged
+strategies of Alice and Bob, respectively. We claim that (xˆ, yˆ) is an -NE.
+In proof, let
+v =
+1
+T
+T∑
+t=1
+(xt )>Ayt
+18There is no hope of competing with the best action sequence in hindsight: consider two actions and an adversary that flips a
+coin each time step to choose between the reward vectors (1, 0) and (0, 1).
+19For the matching lower bound, with n actions, consider an adversary that sets the reward of each action uniformly at random
+from {−1, 1} at each time step. Every online algorithm earns expected cumulative reward 0, while the expected cumulative reward
+of the best action in hindsight is Θ(√T · √log n).
+18
+denote Alice’s time-averaged payoff. Alice and Bob both used (in effect) the EW algorithm to choose their
+strategies, so we can apply the vanishing regret guarantee in Corollary 1.11 once for each player and use
+linearity to obtain
+v ≥
+(
+max
+x
+1
+T
+T∑
+t=1
+x>Ayt
+)
+− 
+2
+=
+(
+max
+x
+x>Ayˆ
+)
+− 
+2
+(1.3)
+and
+v ≤
+(
+min
+y
+1
+T
+T∑
+t=1
+(xt )>Ay
+)
++
+
+2
+=
+(
+min
+y
+xˆ>Ay
+)
++
+
+2
+. (1.4)
+In particular, taking x = xˆ in (1.3) and y = yˆ in (1.4) shows that
+xˆ>Ayˆ ∈
+[
+v − 
+2
+, v +
+
+2
+]
+. (1.5)
+Now consider a (pure) deviation from (xˆ, yˆ), say by Alice to the row i. Denote this deviation by ei. By
+inequality (1.3) (with x = ei) we have
+e>i Ayˆ ≤ v +
+
+2
+. (1.6)
+Because Alice receives expected payoff at least v − 2 in (xˆ, yˆ) (by (1.5)) and at most v + 2 from any deviation
+(by (1.6)), her -NE conditions are satisfied. A symmetric argument applies to Bob, completing the proof.
+1.3 General Bimatrix Games
+A general bimatrix game is defined by two independent payoff matrices, an m × n matrix A for Alice and an
+m×nmatrix B for Bob. (In a zero-sum game, B = −A.) The definition of an (approximate) Nash equilibrium
+is what you’d think it would be:
+Definition 1.12 (-Approximate Nash Equilibrium). For a bimatrix game (A, B), row and column mixed
+strategies xˆ and yˆ constitute an -NE if
+xˆ>Ayˆ ≥ x>Ayˆ −  ∀x , and (1.7)
+xˆ>B yˆ ≥ xˆ>By −  ∀y . (1.8)
+It has long been known that many of the nice properties of zero-sum games break down in general
+bimatrix games.20
+Example 1.13 (Strange Bimatrix Behavior). Suppose two friends, Alice and Bob, want to go for dinner, and
+are trying to agree on a restaurant. Alice prefers Italian over Thai, and Bob prefers Thai over Italian, but
+both would rather eat together than eat alone.21 Supposing the rows and columns are indexed by Italian and
+Thai, in that order, and Alice is the row player, we get the following payoff matrices:
+A =
+[
+2 0
+0 1
+]
+, B =
+[
+1 0
+0 2
+]
+, or, in shorthand, (A, B) =
+[(2, 1) (0, 0)
+(0, 0) (1, 2)
+]
+.
+There are two obvious Nash equilibria, both pure: either Alice and Bob go to the Italian restaurant, or they
+both go to the Thai restaurant. But there’s a third Nash equilibrium, a mixed one22: Alice chooses Italian
+20We already mentioned Shapley’s 1964 example showing that fictitious play need not converge [145].
+21In older game theory texts, this example is called the “Battle of the Sexes.”
+22Fun fact: outside of degenerate cases, every game has an odd number of Nash equilibria (see also Solar Lecture 4).
+19
+over Thai with probability 23 , and Bob chooses Thai over Italian with probability
+2
+3 . This is an undesirable
+Nash equilibrium, with Alice and Bob eating alone more than half the time.
+Example 1.13 shows that, unlike in zero-sum games, different Nash equilibria can result in different
+expected player payoffs. Similarly, the Nash equilibria of a bimatrix game do not generally form a convex
+set (unlike in the zero-sum case).
+Nash equilibria of bimatrix games are not completely devoid of nice properties, however. For starters,
+we have guaranteed existence.
+Theorem 1.14 (Nash’s Theorem [119, 118]). Every bimatrix game has at least one (mixed) Nash equilibrium.
+The proof is a fixed-point argument that we will have more to say about in Solar Lecture 2.23 Nash’s
+theorem holds more generally for games with any finite number of players and strategies.
+Nash equilibria of bimatrix games have nicer structure than those in games with three or more players.
+First, in bimatrix games with integer payoffs, there is a Nash equilibrium in which all probabilities are
+rational numbers with bit complexity polynomial in that of the game.24 Second, there is a simplex-type
+pivoting algorithm, called the Lemke-Howson algorithm [101], which computes a Nash equilibrium of a
+bimatrix game in a finite number of steps (see von Stengel [158] for a survey). Like the simplex method,
+the Lemke-Howson algorithm takes an exponential number of steps in the worst case [114, 143]. The
+similarities between Nash equilibria of bimatrix games and optimal solutions of linear programs initially
+led to some optimism that computing the former might be as easy as computing the latter (i.e., might be a
+polynomial-time solvable problem). Alas, as we’ll see, this does not seem to be the case.
+1.4 Approximate Nash Equilibria in Bimatrix Games
+The last topic of this lecture is some semi-positive results about approximate Nash equilibria in general
+bimatrix games. While simple, these results are important and will show up repeatedly in the rest of the
+lectures.
+1.4.1 Sparse Approximate Nash Equilibria
+Here is a crucial result for us: there are always sparse approximate Nash equilibria.25,26
+Theorem 1.15 (Existence of Sparse Approximate Nash Equilibria (Lipton et al. [104])). For every  > 0 and
+every n × n bimatrix game, there exists an -NE in which each player randomizes uniformly over a multi-set
+of O((log n)/2) pure strategies.27
+Proof idea. Fix an n × n bimatrix game (A, B).
+1. Let (x∗, y∗) be an exact Nash equilibrium of (A, B). (One exists, by Theorem 1.14.)
+23Von Neumann’s alleged reaction when Nash told him his theorem [117, P.94]: “That’s trivial, you know. That’s just a fixed
+point theorem.”
+24Exercise: prove this by showing that, after you’ve guessed the two support sets of a Nash equilibrium, you can recover the
+exact probabilities using two linear programs.
+25Althöfer [4] and Lipton and Young [103] independently proved a precursor to this result in the special case of zero-sum games.
+The focus of the latter paper is applications in complexity theory (like “anticheckers”).
+26Exercise: there are arbitrarily large games where every exact Nash equilibrium has full support. Hint: generalize rock-paper-
+scissors. Alternatively, see Section 5.2.6 of Solar Lecture 5.
+27By a padding argument, there is no loss of generality in assuming that Alice and Bob have the same number of strategies.
+20
+2. As a thought experiment, sample Θ((log n)/2) pure strategies for Alice i.i.d. (with replacement)
+from x∗, and similarly for Bob i.i.d. from y∗.
+3. Let xˆ, yˆ denote the empirical distributions of the samples (with probabilities equal to frequencies in
+the sample)—equivalently, the uniform distributions over the two multi-sets of pure strategies.
+4. Use Chernoff bounds to argue that (xˆ, yˆ) is an -NE (with high probability). Specifically, because of
+our choice of the number of samples, the expected payoff of each row strategy w.r.t. yˆ differs from
+that w.r.t. y∗ by at most /2 (w.h.p.). Because every strategy played with non-zero probability in x∗ is
+an exact best response to y∗, every strategy played with non-zero probability in xˆ is within  of a best
+response to yˆ. (The same argument applies with the roles of xˆ and yˆ reversed.) This is a sufficient
+condition for being an -NE.28
+
+1.4.2 Implications for Communication Complexity
+Theorem 1.15 immediately implies the existence of an -NE of an n×n bimatrix gamewith description length
+O((log2 n)/2), with ≈ log n bits used to describe each of the O((log n)/2) pure strategies in the multi-sets
+promised by the theorem. Moreover, if an all-powerful prover writes down an alleged such description on
+a publicly observable blackboard, then Alice and Bob can privately verify that the described pair of mixed
+strategies is indeed an -NE. For example, Alice can use the (publicly viewable) description of Bob’s mixed
+strategy to compute the expected payoff of her best response and check that it is at most  more than her
+expected payoff when playing the mixed strategy suggested by the prover. Summarizing:
+Corollary 1.16 (PolylogarithmicNondeterministicCommunicationComplexity). The nondeterministic com-
+munication complexity of computing an -NE of an n × n bimatrix game is O((log2 n)/2).
+Thus, if there is a polynomial lower bound on the deterministic or randomized communication complexity
+of computing an approximate Nash equilibrium, the only way to prove it is via techniques that don’t
+automatically apply also to the problem’s nondeterministic communication complexity. This observation
+rules out many of the most common lower bound techniques. In Solar Lectures 2 and 3, we’ll see how to
+thread the needle using a simulation theorem, which lifts a deterministic or random query (i.e., decision tree)
+lower bound to an analogous communication complexity lower bound.
+1.4.3 Implications for Computational Complexity
+The second important consequence of Theorem 1.15 is a limit on the worst-possible computational hardness
+we could hope to prove for the problem of computing an approximate Nash equilibrium of a bimatrix game:
+at worst, the problem is quasi-polynomial-hard.
+Corollary 1.17 (Quasi-Polynomial Computational Complexity). There is an algorithm that, given as input
+a description of an n × n bimatrix game and a parameter  , outputs an -NE in nO((log n)/2) time.
+Proof. The algorithm enumerates all nO((log n)/2) possible choices for the multi-sets promised by Theo-
+rem 1.15. It is easy to check whether or not the mixed strategies induced by such a choice constitute an
+-NE—just compute the expected payoffs of each strategy and of the players’ best responses, as in the proof
+of Corollary 1.16. 
+28This sufficient condition has its own name: a well-supported -NE.
+21
+Because of the apparent paucity of natural problems with quasi-polynomial complexity, the quasi-
+polynomial-time approximation scheme (QPTAS) in Corollary 1.17 initially led to optimism that there
+should be a PTAS for the problem. Also, if there were a reduction showing quasi-polynomial-time hardness
+for computing an approximate Nash equilibrium, what would be the appropriate complexity assumption, and
+what would the reduction look like? Solar Lectures 4 and 5 answer this question.
+22
+Solar Lecture 2
+Communication Complexity Lower Bound for Computing an Approximate Nash Equilibrium of a
+Bimatrix Game (Part I)
+This lecture and the next consider the communication complexity of computing an approximate Nash
+equilibrium, culminating with a proof of the recent breakthrough polynomial lower bound of Babichenko
+and Rubinstein [9]. This lower bound rules out the possibility of quickly converging uncoupled dynamics in
+general bimatrix games (see Section 1.2).
+2.1 Preamble
+Recall the setup: there are two players, Alice and Bob, each with their own payoff matrices A and B. Without
+loss of generality (by padding), the two players have the same number N of strategies. We consider a
+two-party model where, initially, Alice knows only A and Bob knows only B. The goal is then for Alice and
+Bob to compute an approximate Nash equilibrium (Definition 1.12) with as little communication as possible.
+This lecture and the next explain all of the main ideas behind the following result:
+Theorem 2.1 (Babichenko and Rubinstein [9]). There is a constant c > 0 such that, for all sufficiently small
+constants  > 0 and sufficiently large N , the randomized communication complexity of computing an -NE
+is Ω(Nc).1
+For our purposes, a randomized protocol with communication cost b always uses at most b bits of
+communication, and terminates with at least one player knowing an -NE of the game with probability at
+least 12 (over the protocol’s coin flips).
+Thus, while there are lots of obstacles to players reaching an equilibriumof a game (see also Section 1.1.7),
+communication alone is already a significant bottleneck. A corollary of Theorem 2.1 is that there can be no
+uncoupled dynamics (Section 1.2) that converge to an approximate Nash equilibrium in a sub-polynomial
+number of rounds in general bimatrix games (cf., the guarantee in Theorem 1.8 for smooth fictitious play in
+zero-sum games). This is because uncoupled dynamics can be simulated by a randomized communication
+protocol with logarithmic overhead (to communicate which strategy gets played each round).2 This corollary
+should be regarded as a fundamental contribution to pure game theory and economics.
+The goal of this and the next lecture is to sketch a full proof of the lower bound in Theorem 2.1 for
+deterministic communication protocols. We do really care about randomized protocols, however, as these
+1This Ω(Nc) lower bound was recently improved to Ω(N2−o(1)) by Göös and Rubinstein [69] (for constant  > 0 and N →∞).
+The proof follows the same high-level road map used here (see Section 2.5), with a number of additional optimizations.
+2See also footnote 14 in Solar Lecture 1.
+23
+are the types of protocols induced by uncoupled dynamics (see Section 1.2.4). The good news is that
+the argument for the deterministic case will already showcase all of the conceptual ideas in the proof of
+Theorem 2.1. Extending the proof to randomized protocols requires substituting a simulation theorem for
+randomized protocols (we’ll use only a simulation theorem for deterministic protocols, see Theorem 2.7)
+and a few other minor tweaks.3
+2.2 Naive Approach: Reduction From Disjointness
+To illustrate the difficulty of proving a result like Theorem 2.1, consider a naive attempt that tries to
+reduce, say, the Disjointness problem to the problem of computing an -NE, with YES-instances mapped
+to games in which all equilibria have some property Π, and NO-instances mapped to games in which no
+equilibrium has property Π (Figure 2.1).4 For the reduction to be useful, Π needs to be some property
+that can be checked with little to no communication, such as “Alice plays her first strategy with positive
+probability” or “Bob’s strategy has full support.” The only problem is that this is impossible! The reason
+is that the problem of computing an approximate Nash equilibrium has polylogarithmic nondeterministic
+communication complexity (because of the existence of sparse approximate equilibria, see Theorem 1.15
+and Corollary 1.16), while the Disjointness function does not (for 1-inputs). A reduction of the proposed
+form would translate a nondeterministic lower bound for the latter problem to one for the former, and hence
+cannot exist.5
+Our failed reduction highlights two different challenges. The first is to resolve the typechecking error
+that we encountered between a standard decision problem, where there might or might not be a witness
+(like Disjointness, where a witness is an element in the intersection), and a total search problem where
+there is always a witness (like computing an approximate Nash equilibrium, which is guaranteed to exist
+by Nash’s theorem). The second challenge is to figure out how to prove a strong lower bound on the
+deterministic or randomized communication complexity of computing an approximate Nash equilibrium
+without inadvertently proving the same (non-existent) lower bound for nondeterministic protocols. To
+resolve the second challenge, we’ll make use of simulation theorems that lift query complexity lower bounds
+to communication complexity lower bounds (see Section 2.7); these are tailored to a specific computational
+model, like deterministic or randomized protocols. For the first challenge, we need to identify a total search
+problemwith high communication complexity. That is, for total search problems, which should be the analog
+of 3SAT or Disjointness? The correct answer turns out to be fixed-point computation.
+3When Babichenko and Rubinstein [9] first proved their result (in late 2016), the state-of-the-art in simultaneous theorems for
+randomized protocols was much more primitive than for deterministic protocols. This forced Babichenko and Rubinstein [9] to use
+a relatively weak simulation theorem for the randomized case (by Göös et al. [70]), which led to a number of additional technical
+details in the proof. Amazingly, a full-blown randomized simulation theorem was published shortly thereafter [5, 71]! With this in
+hand, extending the argument here for deterministic protocols to randomized protocols is relatively straightforward.
+4Recall theDisjointness function: Alice and Bob have input strings a, b ∈ {0, 1}n, and the output of the function is “0” if there
+is a coordinate i ∈ {1, 2, . . . , n} with ai = bi = 1 and “1” otherwise. One of the first things you learn in communication complexity
+is that the nondeterministic communication complexity of Disjointness (for certifying 1-inputs) is n (see e.g. [98, 137]). And of
+course one of the most famous and useful results in communication complexity is that the function’s randomized communication
+complexity (with two-sided error) is Ω(n) [88, 128].
+5Mika Göös (personal communication, January 2018) points out that there are more clever reductions from Disjointness,
+starting with Raz and Wigderson [127], that can imply strong lower bounds on the randomized communication complexity of
+certain problems with low nondeterministic communication complexity; and that it is plausible that a Raz-Wigderson-style proof,
+such as that for search problems in Göös and Pitassi [68], could be adapted to give an alternative proof of Theorem 2.1.
+24
+“YES” 
+“NO” 
+Disjointness ε-Nash Equilibria 
+Every 
+equilibrium 
+satisfies π  
+No 
+equilibrium 
+satisfies π  
+Figure 2.1: A naive attempt to reduce theDisjointness problem to the problem of computing an approximate
+Nash equilibrium.
+2.3 Finding Brouwer Fixed Points (The -BFP Problem)
+This section and the next describe reductions from computing Nash equilibria to computing fixed points,
+and from computing fixed points to a path-following problem. These reductions are classical. The content
+of the proof in Theorem 2.1 are reductions in the opposite direction; these are discussed in Solar Lecture 3.
+2.3.1 Brouwer’s Fixed-Point Theorem
+Brouwer’s fixed-point theorem states that whenever you stir your coffee, there will be a point that ends up
+exactly where it began. Or if you prefer a more formal statement:
+Theorem2.2 (Brouwer’s Fixed-Point Theorem (1910)). IfC is a compact convex subset ofRd, and f : C → C
+is continuous, then there exists a fixed point: a point x ∈ C with f (x) = x.
+All of the hypotheses are necessary.6 We will be interested in a computational version of Brouwer’s
+fixed-point theorem, the -BFP problem:
+The -BFP Problem (Generic Version)
+given a description of a compact convex set C ⊆ Rd and a continuous function f : C → C, output an
+-approximate fixed point, meaning a point x ∈ C such that ‖ f (x) − x‖ <  .
+The -BFP problem, in its many different forms, plays a starring role in the study of equilibrium computation.
+The setC is typically fixed in advance, for example to the d-dimensional hypercube. While much of the work
+on the -BFP problem has focused on the `∞ norm (e.g. [79]), one innovation in the proof of Theorem 2.1 is
+to instead use a normalized version of the `2 norm (following Rubinstein [142]).
+Nailing down the problem precisely requires committing to a family of succinctly described continuous
+functions f . The description of the family used in the proof of Theorem 2.1 is technical and best left to
+6If convexity is dropped, consider rotating an annulus centered at the origin. If boundedness is dropped, consider x 7→ x + 1
+on R. If closedness is dropped, consider x 7→ x2 on (0, 1]. If continuity is dropped, consider x 7→ (x + 12 ) mod 1 on [0, 1]. Many
+more general fixed-point theorems are known, and find applications in economics and elsewhere; see e.g. [15, 108].
+25
+Section 3.1. Often (and in these lectures), the family of functions considered contains only O(1)-Lipschitz
+functions.7 In particular, this guarantees the existence of an -approximate fixed point with description
+length polynomial in the dimension and log 1 (by rounding an exact fixed point to its nearest neighbor on a
+suitably defined grid).
+2.3.2 From Brouwer to Nash
+Fixed-point theorems have long been used to prove equilibrium existence results, including the original proofs
+of the Minimax theorem (Theorem 1.1) and Nash’s theorem (Theorem 1.14).8 Analogously, algorithms for
+computing (approximate) fixed points can be used to compute (approximate) Nash equilibria.
+Fact 2.3. Existence/computation of -NE reduces to that of -BFP.
+To provide further details, let’s sketch why Nash’s theorem (Theorem 1.14) reduces to Brouwer’s fixed-
+point theorem (Theorem 2.2), following the version of the argument in Geanakoplos [63].9 Consider a
+bimatrix game (A, B) and let S1, S2 denote the strategy sets of Alice and Bob (i.e., the rows and columns).
+The relevant convex compact set is C = ∆1 × ∆2, where ∆i is the simplex representing the mixed strategies
+over Si. We want to define a continuous function f : C → C, from mixed strategy profiles to mixed strategy
+profiles, such that the fixed points of f are the Nash equilibria of this game. We define f separately for
+each component fi : C → ∆i for i = 1, 2. A natural idea is to set fi to be a best response of player i to the
+mixed strategy of the other player. This does not lead to a continuous, or even well defined, function. We
+can instead use a “regul
